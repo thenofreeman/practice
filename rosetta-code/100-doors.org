@@ -1,0 +1,66 @@
+#+TITLE: 100 Doors
+
+https://rosettacode.org/wiki/100_doors
+
+There are 100 doors in a row that are all initially closed.
+You make 100 passes by the doors.
+
+The first time through, visit every door and toggle the door
+(if the door is closed, open it; if it is open, close it).
+
+The second time, only visit every 2nd door (door #2, #4, #6, ...),
+and toggle it.
+
+The third time, visit every 3rd door (door #3, #6, #9, ...), etc,
+until you only visit the 100th door.
+
+What state are the doors in after the last pass? Which are open, which are closed?
+
+* Contents :toc:
+- [[#pseudocode][Pseudocode]]
+- [[#c][C++]]
+  - [[#attempt-a---standard-generic][Attempt A - Standard, Generic]]
+  - [[#attempt-b---more-efficient-overfitted][Attempt B - More Efficient, Overfitted]]
+
+* Pseudocode
+* C++
+
+** Attempt A - Standard, Generic
+
+#+begin_src C++ :tangle ./_tangles/100-doors.cpp
+#include <iostream>
+
+int main()
+{
+    int numDoors{100};
+
+    bool doors[numDoors]{};
+
+    for (int i{1}; i <= numDoors; ++i)
+        for (int j{1}; j <= numDoors; ++j)
+            if (j % i == 0)
+                doors[j-1] = !doors[j-1];
+
+    for (int i{0}; i < numDoors; ++i)
+        if (doors[i])
+            std::cout << "Door #" << i+1 << " is Open\n";
+
+    return 0;
+}
+#+end_src
+
+** Attempt B - More Efficient, Overfitted
+
+#+begin_src C++ :tangle ./_tangles/100-doors-b.cpp
+#include <iostream>
+
+int main()
+{
+    int numDoors{100};
+
+    for (int i{1}; i*i <= numDoors; ++i)
+        std::cout << "Door #" << i*i << " is Open\n";
+
+    return 0;
+}
+#+end_src

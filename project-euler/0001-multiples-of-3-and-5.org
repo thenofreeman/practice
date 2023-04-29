@@ -1,0 +1,42 @@
+#+TITLE: Multiples Of 3 And 5
+
+https://projecteuler.net/problem=1
+
+If we list all the natural numbers below 10 that are multiples of
+3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23.
+
+Find the sum of all the multiples of 3 or 5 below 1000.
+
+* Contents :toc:
+- [[#pseudocode][Pseudocode]]
+- [[#c][C++]]
+
+* Pseudocode
+* C++
+
+#+begin_src C++ :main no
+#include <iostream>
+
+int main()
+{
+    int limit{1000};
+    int cases[] {3, 5};
+    int numCases{2};
+    int sum{0};
+
+    for (int i{1}; i < limit; ++i)
+    {
+        for (int c{0}; c < numCases; ++c)
+        {
+            if ((i % cases[c]) == 0)
+            {
+                sum += i;
+                break;
+            }
+        }
+    }
+
+    std::cout << sum; // 233168
+    return 0;
+}
+#+end_src
