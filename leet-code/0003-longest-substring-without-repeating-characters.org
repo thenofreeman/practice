@@ -43,43 +43,40 @@ Constraints:
 * C++
 
 #+begin_src C++
-class Solution {
-public:
-    int lengthOfLongestSubstring(std::string s)
+int lengthOfLongestSubstring(std::string s)
+{
+    std::vector<char> substr;
+
+    int longest {0};
+
+    for (int i = 0; i < s.length(); ++i)
     {
-        std::vector<char> substr;
+        substr.push_back(s[i]);
 
-        int longest {0};
+        if (longest >= s.length()-i) break;
 
-        for (int i = 0; i < s.length(); ++i)
+        bool repeated {false};
+        int j = i+1;
+        while (!repeated && j < s.length())
         {
-            substr.push_back(s[i]);
+            std::vector<char>::iterator it_pos
+                                = std::find(substr.begin(), substr.end(), s[j]);
 
-            if (longest >= s.length()-i) break;
+            if (it_pos != substr.end())
+                repeated = true;
+            else
+                substr.push_back(s[j]);
 
-            bool repeated {false};
-            int j = i+1;
-            while (!repeated && j < s.length())
-            {
-                std::vector<char>::iterator it_pos
-                                    = std::find(substr.begin(), substr.end(), s[j]);
-
-                if (it_pos != substr.end())
-                    repeated = true;
-                else
-                    substr.push_back(s[j]);
-
-                ++j;
-            }
-
-            if (substr.size() > longest)
-                longest = substr.size();
-
-            substr.clear();
-
+            ++j;
         }
 
-        return longest;
+        if (substr.size() > longest)
+            longest = substr.size();
+
+        substr.clear();
+
     }
-};
+
+    return longest;
+}
 #+end_src
