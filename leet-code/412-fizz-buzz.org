@@ -1,4 +1,4 @@
-#+title: 412 Fizz Buzz
+#+title: Fizz Buzz
 
 https://leetcode.com/problems/fizz-buzz/
 
