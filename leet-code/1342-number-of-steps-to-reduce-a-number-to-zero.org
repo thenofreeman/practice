@@ -1,0 +1,66 @@
+#+title: Number Of Steps To Reduce A Number To Zero
+
+Given an integer num, return the number of steps to reduce it to zero.
+
+In one step, if the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
+
+Example 1:
+
+#+begin_src
+Input: num = 14
+Output: 6
+#+end_src
+
+/Explanation:/
+
+1) 14 is even; divide by 2 and obtain 7.
+2) 7 is odd; subtract 1 and obtain 6.
+3) 6 is even; divide by 2 and obtain 3.
+4) 3 is odd; subtract 1 and obtain 2.
+5) 2 is even; divide by 2 and obtain 1.
+6) 1 is odd; subtract 1 and obtain 0.
+
+Example 2:
+
+#+begin_src
+Input: num = 8
+Output: 4
+#+end_src
+
+/Explanation:/
+1) 8 is even; divide by 2 and obtain 4.
+2) 4 is even; divide by 2 and obtain 2.
+3) 2 is even; divide by 2 and obtain 1.
+4) 1 is odd; subtract 1 and obtain 0.
+
+Example 3:
+
+#+begin_src
+Input: num = 123
+Output: 12
+#+end_src
+
+Constraints:
+- 0 <= num <= 106
+
+* Content :toc:
+- [[#c][C++]]
+
+* C++
+
+#+begin_src C++
+int numberOfSteps(int num)
+{
+    int steps {0};
+    while (num > 0)
+    {
+        if (num % 2 == 0)
+            num >>= 1;
+        else
+            num -= 1;
+
+        ++steps;
+    }
+    return steps;
+}
+#+end_src
