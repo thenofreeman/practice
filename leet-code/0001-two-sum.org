@@ -2,6 +2,12 @@
 
 https://leetcode.com/problems/two-sum/
 
+* Contents :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
 Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
@@ -36,9 +42,6 @@ Constraints:
 - -109 <= nums[i] <= 109
 - -109 <= target <= 109
 - Only one valid answer exists.
-
-* Contents :toc:
-- [[#c][C++]]
 
 * C++
 

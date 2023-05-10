@@ -2,10 +2,13 @@
 
 https://rosettacode.org/wiki/Towers_of_Hanoi
 
-Solve the Towers of Hanoi problem with recursion.
-
 * Contents :toc:
+- [[#info][Info]]
 - [[#cpp][Cpp]]
+
+* Info
+
+Solve the Towers of Hanoi problem with recursion.
 
 * Cpp
 

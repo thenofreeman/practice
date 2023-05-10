@@ -2,6 +2,12 @@
 
 https://leetcode.com/problems/fizz-buzz/
 
+* Content :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
 Given an integer n, return a string array answer (1-indexed) where:
 - answer[i] == "FizzBuzz" if i is divisible by 3 and 5.
 - answer[i] == "Fizz" if i is divisible by 3.
@@ -31,9 +37,6 @@ Output: ["1","2","Fizz","4","Buzz","Fizz","7","8","Fizz","Buzz","11","Fizz","13"
 
 Constraints:
 - 1 <= n <= 104
-
-* Content :toc:
-- [[#c][C++]]
 
 * C++
 
