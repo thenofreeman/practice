@@ -1,0 +1,52 @@
+#+title: Ransom Note
+
+https://leetcode.com/problems/ransom-note/
+
+Given two strings ransomNote and magazine, return true if ransomNote can be constructed by using the letters from magazine and false otherwise.
+
+Each letter in magazine can only be used once in ransomNote.
+
+Example 1:
+
+#+begin_src
+Input: ransomNote = "a", magazine = "b"
+Output: false
+#+end_src
+
+Example 2:
+
+#+begin_src
+Input: ransomNote = "aa", magazine = "ab"
+Output: false
+#+end_src
+
+Example 3:
+
+#+begin_src
+Input: ransomNote = "aa", magazine = "aab"
+Output: true
+#+end_src
+
+Constraints:
+- 1 <= ransomNote.length, magazine.length <= 105
+- ransomNote and magazine consist of lowercase English letters.
+
+* Content :toc:
+- [[#c][C++]]
+
+* C++
+
+#+begin_src C++
+bool canConstruct(string ransomNote, string magazine)
+{
+    for (int i {0}; i < ransomNote.length(); ++i)
+    {
+        std::size_t pos = magazine.find(ransomNote[i]);
+        if (pos < magazine.length())
+            magazine.erase(pos, 1);
+        else
+            return false;
+    }
+    return true;
+}
+#+end_src
