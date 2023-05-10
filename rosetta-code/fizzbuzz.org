@@ -9,11 +9,9 @@ But:
 - for multiples of both three and five, print =FizzBuzz= (instead of the number)
 
 * Contents :toc:
-- [[#pseudocode][Pseudocode]]
 - [[#cpp][Cpp]]
 - [[#javascript][JavaScript]]
 
-* Pseudocode
 * Cpp
 
 #+begin_src C++ :main no

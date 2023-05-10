@@ -5,10 +5,8 @@ https://rosettacode.org/wiki/Towers_of_Hanoi
 Solve the Towers of Hanoi problem with recursion.
 
 * Contents :toc:
-- [[#pseudocode][Pseudocode]]
 - [[#cpp][Cpp]]
 
-* Pseudocode
 * Cpp
 
 #+name: towers-of-hanoi-cpp

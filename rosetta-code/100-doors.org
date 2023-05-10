@@ -17,12 +17,10 @@ until you only visit the 100th door.
 What state are the doors in after the last pass? Which are open, which are closed?
 
 * Contents :toc:
-- [[#pseudocode][Pseudocode]]
 - [[#c][C++]]
   - [[#attempt-a---standard-generic][Attempt A - Standard, Generic]]
   - [[#attempt-b---more-efficient-overfitted][Attempt B - More Efficient, Overfitted]]
 
-* Pseudocode
 * C++
 
 ** Attempt A - Standard, Generic
