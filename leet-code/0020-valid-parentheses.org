@@ -1,0 +1,101 @@
+#+title: Valid Parentheses
+
+https://leetcode.com/problems/valid-parentheses/
+
+* Content :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
+Given a string =s= containing just the characters ='('=, =')'=, ='{'=, ='}'=, ='['= and =']'=, determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+
+Example 1:
+
+#+begin_src C++
+Input: s = "()"
+Output: true
+#+end_src
+
+Example 2:
+
+#+begin_src C++
+Input: s = "()[]{}"
+Output: true
+#+end_src
+
+Example 3:
+
+#+begin_src C++
+Input: s = "(]"
+Output: false
+#+end_src
+
+Constraints:
+- 1 <= s.length <= 104
+- s consists of parentheses only '()[]{}'.
+
+* C++
+
+#+begin_src C++
+bool isValid(std::string s)
+{
+    std::stack<char> parens;
+
+    for (char c : s)
+    {
+        switch (c)
+        {
+            case '(':
+                parens.push(c);
+                break;
+            case ')':
+                if (!parens.empty())
+                {
+                    if (parens.top() != '(')
+                        return false;
+                    else
+                        parens.pop();
+                }
+                else return false;
+                break;
+            case '{':
+                parens.push(c);
+                break;
+            case '}':
+                if (!parens.empty())
+                {
+                    if (parens.top() != '{')
+                        return false;
+                    else
+                        parens.pop();
+                }
+                else return false;
+                break;
+            case '[':
+                parens.push(c);
+                break;
+            case ']':
+                if (!parens.empty())
+                {
+                    if (parens.top() != '[')
+                        return false;
+                    else
+                        parens.pop();
+                }
+                else return false;
+                break;
+        }
+    }
+    if (parens.size() > 0)
+        return false;
+    else
+        return true;
+}
+#+end_src
