@@ -1,0 +1,17 @@
+#+title: Nine Element Set
+
+* Info
+
+The value of the previous comprehension,
+
+#+begin_src Python
+{x*y for x in {1,2,3} for y in {2,3,4}}
+#+end_src
+
+is a seven-element set. Replace {1,2,3} and {2,3,4} with two other three-elements sets so that the value becomes a nine-element set.
+
+* Python
+
+#+begin_src Python
+{x*y for x in {1,2,10} for y in {1,3,4}}
+#+end_src
