@@ -4,7 +4,7 @@ https://rosettacode.org/wiki/FizzBuzz
 
 * Contents :toc:
 - [[#info][Info]]
-- [[#cpp][Cpp]]
+- [[#c][C++]]
 - [[#javascript][JavaScript]]
 
 * Info
@@ -15,7 +15,7 @@ But:
 - for multiples of five, print =Buzz= (instead of the number)
 - for multiples of both three and five, print =FizzBuzz= (instead of the number)
 
-* Cpp
+* C++
 
 #+begin_src C++ :main no
 #include <iostream>

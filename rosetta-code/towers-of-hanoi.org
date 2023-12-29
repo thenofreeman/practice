@@ -4,13 +4,13 @@ https://rosettacode.org/wiki/Towers_of_Hanoi
 
 * Contents :toc:
 - [[#info][Info]]
-- [[#cpp][Cpp]]
+- [[#c][C++]]
 
 * Info
 
 Solve the Towers of Hanoi problem with recursion.
 
-* Cpp
+* C++
 
 #+name: towers-of-hanoi-cpp
 #+begin_src C++ :main no
