@@ -26,6 +26,7 @@ Files are marked with a list of languages they are implemented in, following the
 - [[./algorithms/binary-search.org]] (C++)
 ** Sorting
 - [[./algorithms/selection-sort.org]] (C++)
+- [[./algorithms/bubble-sort.org]] (C++)
 * Challenges
 ** Leet Code
 - [[./leet-code/0001-two-sum.org]] (C++)

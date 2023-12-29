@@ -1,0 +1,29 @@
+#+title: Bubble Sort
+
+* Info
+
+Bubble sort algorithm.
+
+Iterates through a list of values, swapping pairs of adjacent values if the previous is greater than the current, until there are no more pairs to swap.
+
+* C++
+
+#+begin_src C++
+void bubbleSort(const int* items, const int& itemcount)
+{
+    for (int low{0}; low < itemcount-1; ++low)
+    {
+        for (int min{0}; min < itemcount-low-1; ++min)
+        {
+            if(items[min] > items[min+1])
+            {
+                int temp = items[min];
+                items[min] = items[min+1];
+                items[min+1] = temp;
+            }
+        }
+    }
+}
+#+end_src
+
+#+RESULTS:
