@@ -320,50 +320,126 @@ k = 'Frodo'
 
 * Task 0.5.23
 
+Using range, write a comprehension whose value is a dictionary.
+
+The keys should be the integers from 0 to 99 and the value corresponding to a key should be the
+square of the key.
+
 #+begin_src python :session
 #+end_src
 
 * Task 0.5.24
+
+Assign some set to the variable D, e.g. D ={'red','white','blue'}.
+
+Now write a comprehension that evaluates to a dictionary that represents the identity function on D.
 
 #+begin_src python :session
 #+end_src
 
 * Task 0.5.25
 
+Using the variables base=10 and digits=set(range(base)), write a dictionary comprehension that maps each integer between zero and nine hundred ninety nine to the list of three digits that represents that integer in base 10.
+
+That is, the value should be:
+{0: [0, 0, 0], 1: [0, 0, 1], 2: [0, 0, 2], 3: [0, 0, 3], ...,
+ 10: [0, 1, 0], 11: [0, 1, 1], 12: [0, 1, 2], ...,
+ 999: [9, 9, 9]}
+
 #+begin_src python :session
 #+end_src
 
 * Task 0.5.26
 
+Suppose d is a dictionary that maps some employee IDs (a subset of the integers from 0 to n − 1) to salaries.
+
+Suppose L is an n-element list whose i th element is the name of employee number i.
+
+Your goal is to write a comprehension whose value is a dictionary mapping employee names to salaries.
+
+You can assume that employee names are distinct.
+
+Test your comprehension with the following data:
+
 #+begin_src python :session
+id2salary = {0:1000.0, 3:990, 1:1200.50}
+names = ['Larry', 'Curly', '', 'Moe']
+
+
 #+end_src
 
 * Task 0.5.27
+
+Try entering the definition of twice(z).
+
+After you enter the definition, you will see the ellipsis. Just press enter. Next, try invoking the procedure on some actual arguments.
+
+Just for fun, try strings or lists.
+
+Finally, verify that the variable z is now not bound to any value by asking Python to evaluate the expression consisting of z.
 
 #+begin_src python :session
 #+end_src
 
 * Task 0.5.28
 
+Define a one-line procedure =nextInts(L)= specified as follows:
+- input: list L of integers
+- output: list of integers whose ith element is one more than the ith element of L
+- example: input [1, 5, 7], output [2, 6, 8].
+
 #+begin_src python :session
 #+end_src
 
 * Task 0.5.29
+
+Define a one-line procedure =cubes(L)= specified as follows:
+- input: list L of numbers
+- output: list of numbers whose ith element is the cube of the ith element of L
+- example: input [1, 2, 3], output [1, 8, 27].
 
 #+begin_src python :session
 #+end_src
 
 * Task 0.5.30
 
+Define a one-line procedure =dict2list(dct,keylist)= with this spec:
+- input: dictionary dct, list keylist consisting of the keys of dct
+- output: list L such that L[i] = dct[keylist[i]] for i = 0, 1, 2,..., len(keylist) − 1
+- example: input dct={'a':'A', 'b':'B', 'c':'C'} and keylist=['b','c','a'], output ['B', 'C', 'A']
+
 #+begin_src python :session
 #+end_src
 
 * Task 0.5.31
 
+Define a one-line procedure list2dict(L, keylist) specified as follows:
+- input: list L, list keylist of immutable items
+- output: dictionary that maps keylist[i] to L[i] for i = 0, 1, 2,..., len(L) − 1
+- example: input L=[’A’,’B’,’C’] and keylist=[’a’,’b’,’c’], output {'a':'A', 'b':'B', 'c':'C'}
+
+Hint: Use a comprehension that iterates over a zip or a range.
+
 #+begin_src python :session
 #+end_src
 
 * Task 0.5.32
+
+Write a procedure all 3 digit numbers(base, digits) with the following spec:
+- input: a positive integer base and the set digits which should be {0, 1, 2,..., base−1}.
+- output: the set of all three-digit numbers where the base is base
+
+For example,
+#+begin_src
+>>> all_3_digit_numbers(2, {0,1})
+{0, 1, 2, 3, 4, 5, 6, 7}
+
+>>> all_3_digit_numbers(3, {0,1,2})
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26}
+
+>>> all_3_digit_numbers(10, {0,1,2,3,4,5,6,7,8,9})
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, ... 985, 986, 987, 988, 989, 990, 991, 992, 993, 994, 995, 996, 997, 998, 999}
+#+end_src
 
 #+begin_src python :session
 #+end_src
