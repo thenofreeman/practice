@@ -22,6 +22,17 @@ Find the remainder of 2304811 divided by 47 without using the modulo operator, %
 #+RESULTS:
 : 25
 
+* Task 0.5.3
+
+Enter a Boolean expression to test whether the sum of 673 and 909 is divisible by 3.
+
+#+begin_src python :session
+(673 + 909) % 3 == 0
+#+end_src
+
+#+RESULTS:
+: False
+
 * Task 0.5.7
 
 The value of the previous comprehension,
