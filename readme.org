@@ -5,6 +5,7 @@
   - [[#leet-code][Leet Code]]
   - [[#project-euler][Project Euler]]
   - [[#rosetta-code][Rosetta Code]]
+  - [[#random][Random]]
 - [[#books][Books]]
   - [[#coding-the-matrix][Coding the Matrix]]
 
@@ -28,6 +29,8 @@
 - [[./rosetta-code/100-doors.org]] (C++)
 - [[./rosetta-code/fizzbuzz.org]] (C++)
 - [[./rosetta-code/towers-of-hanoi.org]] (C++)
+** Random
+- [[./random/0000-number-to-words.org]] (C++)
 * Books
 ** Coding the Matrix
 - [[./coding-the-matrix/lab-0.5-introduction-to-python.org]] (Python)
