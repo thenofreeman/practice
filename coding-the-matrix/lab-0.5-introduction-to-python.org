@@ -201,19 +201,42 @@ S = {-4, -2, 1, 2, 5, 0}
 : [(0, 0, 0), (0, 2, -2), (0, -2, 2), (1, 1, -2), (1, -2, 1), (2, 0, -2), (2, 2, -4), (2, -4, 2), (2, -2, 0), (-4, 2, 2), (-2, 0, 2), (-2, 1, 1), (-2, 2, 0)]
 
 * Task 0.5.15
+Modify the comprehension of the previous task so that the resulting list does not include (0, 0, 0). Hint: add a filter.
 
-#+begin_src python :session
+#+begin_src python :session :results verbatim
+S = {-4, -2, 1, 2, 5, 0}
+
+[(i, j, k) for i in S for j in S for k in S if i+j+k == 0 if (i, j, k) != (0,0,0)]
 #+end_src
+
+#+RESULTS:
+: [(0, 2, -2), (0, -2, 2), (1, 1, -2), (1, -2, 1), (2, 0, -2), (2, 2, -4), (2, -4, 2), (2, -2, 0), (-4, 2, 2), (-2, 0, 2), (-2, 1, 1), (-2, 2, 0)]
 
 * Task 0.5.16
 
-#+begin_src python :session
+Further modify the expression so that its value is not the list of all such tuples but is the first such tuple.
+
+#+begin_src python :session :results verbatim
+S = {-4, -2, 1, 2, 5, 0}
+
+[(i, j, k) for i in S for j in S for k in S if i+j+k == 0 if (i, j, k) != (0,0,0)][0]
 #+end_src
+
+#+RESULTS:
+: (0, 2, -2)
 
 * Task 0.5.17
 
+Find an example of a list L such that len(L) and len(list(set(L))) are different.
+
 #+begin_src python :session
+L = [3, 3, 5] # any list that has a duplicate item
+
+len(L) == len(list(set(L)))
 #+end_src
+
+#+RESULTS:
+: False
 
 * Task 0.5.18
 
