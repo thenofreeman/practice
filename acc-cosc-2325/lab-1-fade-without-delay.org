@@ -1,0 +1,50 @@
+#+title: Lab 1 - Fade Without Delay
+
+* Info
+
+1. Start the Arduino IDE and examine the IDE.
+2. Checkout an Arduino.
+3. DO NOT use a blue USB connection (Its USB 3 and not compatible).
+4. Make sure the Mega 2560 and the correct com port is selected using the Tools menu.
+5. Run Blink for the built-in LED.
+6. Get parts for Blink external LED example.
+7. Run Blink for an external LED.
+8. Run BlinkWithoutDelay.
+9. Run Fade (will need to modify hardware setup).
+10. Modify Fade to not use Delay and instead use millis() with an interval as in BlinkWithoutDelay.
+11. Demo the project in lab to the instructor.
+12.  Turn in your code for your Fade_Without_Delay.
+
+* C++ (Arduino)
+
+#+begin_src C++
+int led = 13;            // the PWM pin the LED is attached to
+int brightness = 0;      // how bright the LED is
+int fadeAmount = 5;      // how many points to fade the LED by
+const int interval = 30; // millisecond interval delay per change in brightness
+unsigned long prev = 0;  // the previous millisecond count
+
+void setup() {
+    // declare pin 13 to be an output:
+    pinMode(led, OUTPUT);
+}
+
+void loop() {
+    unsigned long curr = millis(); // the current millisecond count
+
+    if (curr - prev >= interval) {
+        prev = curr;
+
+        // set the brightness of pin 13:
+        analogWrite(led, brightness);
+
+        // change the brightness for next time through the loop:
+        brightness = brightness + fadeAmount;
+
+        // reverse the direction of the fading at the ends of the fade:
+        if (brightness <= 0 || brightness >= 255) {
+            fadeAmount = -fadeAmount;
+        }
+    }
+}
+#+end_src

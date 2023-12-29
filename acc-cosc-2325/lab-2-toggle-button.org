@@ -1,0 +1,48 @@
+#+title: Lab 2 - Toggle Button
+
+* Info
+
+* C++ (Arduino)
+
+#+begin_src C++
+const int buttonPin = 2,
+          ledPin    = 13;
+
+int buttonState     = 0,
+    prevButtonState = 0,
+    lightState      = 0;
+
+unsigned long prevTime = 0,
+              interval = 250UL;
+
+void setup() {
+    pinMode(ledPin, OUTPUT);
+    pinMode(buttonPin, INPUT);
+}
+
+void loop() {
+    // read the new state of the button
+    buttonState = digitalRead(buttonPin);
+
+    // if the button wasn't already pressed,
+    // but it is now:
+    if (!prevButtonState && buttonState)
+    {
+        // if waited long enough for 'debouncing'
+        // ie. the difference in the last time the state was changed
+        //     to the current time is greater than the defined duration
+        if((millis() - prevTime) > interval)
+        {
+            // toggle the light
+            lightState = !lightState;
+
+            // get the new time after toggle
+            prevTime = millis();
+        }
+        // write new light state to pin
+        digitalWrite(ledPin, lightState);
+    }
+    // set the previous state variable to the previous button state
+    prevButtonState = buttonState;
+}
+#+end_src
