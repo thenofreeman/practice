@@ -1,0 +1,116 @@
+#+title: Lab 13
+
+* Info
+
+Write a basic encrypt and decrypt program.
+
+Take as input a filename to either be encrypted or decrypted.
+
+Using a caesar cypher, shift each character by some value to encrypt, and do the reverse to decrypt.
+
+* C++
+
+#+begin_src C++
+#include <string>
+#include <iostream>
+#include <fstream>
+
+void cryptor(bool);
+
+int main() {
+    bool exit{false};
+
+    std::cout << "\nWelcome to Cryptor, the (not so) secure file encryption/decryption tool.\n";
+
+    char selection{'0'};
+    while (!exit)
+    {
+
+    std::cout << "Please make a selection to continue.\n"
+              << '\n'
+              << "Main Menu:\n"
+              << "  (1) Encrypt a file\n"
+              << "  (2) Decrypt a file\n"
+              << "  (3) Quit\n"
+              << "Selection: ";
+
+        std::cin.get(selection);
+        std::cin.clear();
+        std::cin.ignore(100, '\n');
+        std::cout << '\n';
+
+        switch (selection)
+        {
+            case '1': // encrypt from a file.
+                cryptor(false);
+                exit = false;
+                break;
+            case '2': // decrypt from a file.
+                cryptor(true);
+                exit = false;
+                break;
+            case '3': // Quit.
+                std::cout << "Quitting...";
+                exit = true;
+                break;
+            case '0':
+            default: // Not a valid selection.
+                std::cout << "Invalid selection \"" << (selection == '\n' ? ' ' : selection) << "\". Please try again: ";
+                break;
+        }
+    }
+
+    return 0;
+}
+
+std::string getString(std::string defaultValue)
+{
+  std::string str;
+  std::getline(std::cin, str);
+
+  if (str == "")
+      str = defaultValue;
+
+  return str;
+}
+
+void cryptor(bool toDecrypt)
+{
+    std::string defaultInputFile{"plainfile.txt"};
+    std::string defaultEncryptedFile{"secretfile.txt"};
+    std::string defaultDecryptedFile{"decryptedfile.txt"};
+
+    std::cout << "Enter the name of the file to be " << (toDecrypt ? "decrypted" : "encrypted")
+              << ": [" << (toDecrypt ? defaultEncryptedFile : defaultInputFile) << "] ";
+
+    std::string input{getString(toDecrypt ? defaultEncryptedFile : defaultInputFile)};
+    std::ifstream in(input, std::ios::in);
+    while (!in)
+    {
+        std::cout << "File: \"" << input << "\" doesn't exist. Please try another filename: ";
+
+        input = getString(toDecrypt ? defaultEncryptedFile : defaultInputFile);
+        in.open(input, std::ios::in);
+    }
+
+    std::cout << "Enter the name of the file to be " << (toDecrypt ? "decrypted" : "encrypted") << " to:"
+              << " [" << (toDecrypt ? defaultDecryptedFile : defaultEncryptedFile) << "] ";
+
+    std::string output{getString(toDecrypt ? defaultDecryptedFile : defaultEncryptedFile)};
+    std::ofstream out(output, std::ios::out | std::ios::trunc);
+
+    char c{(char) in.peek()};
+    while (c != EOF)
+    {
+        c = in.get();
+        c = (toDecrypt ? c - 10 : c + 10);
+        out << c;
+        c = in.peek();
+    }
+
+    std::cout << '"' << input << "\" " << (toDecrypt ? "decrypted" : "encrypted") << " to \"" << output << "\"\n\n";
+
+    in.close();
+    out.close();
+}
+#+end_src

@@ -1,0 +1,102 @@
+#+title: Lab 12b
+
+* Info
+
+Write a program with three functions:
+1. upper: Step through all the characters in the string, converting each to uppercase.
+2. lower: Step through all the characters in the string, converting each to lowercase.
+3. flip: Step through all the characters in the string, inverting the case of the character (A->a, b->B).
+
+Each function should accept a C-string as an argument.
+
+The main function should accept one string from the user, then pass it to each of the functions.
+
+Output:
+The original string, the uppercase, lowercase, and flipped case string should all be displayed.
+
+* C++
+
+#+begin_src C++
+#include <cstring>
+#include <iostream>
+
+enum Case
+{
+    UPPERCASE, LOWERCASE, NALPHA,
+};
+
+const char* modifyStr(char* str, char (*char_mod_func)(const char&));
+Case checkCase(const char& c);
+char upper(const char& c);
+char lower(const char& c);
+char flip(const char& c);
+
+int main()
+{
+    constexpr int MAX_LENGTH{50};
+
+    char str[MAX_LENGTH];
+    char cpy[MAX_LENGTH];
+
+    std::cout << "Enter a word or short phrase: ";
+    std::cin.getline(str, MAX_LENGTH);
+    strcpy(cpy, str);
+
+    std::cout << "------------------------------\n";
+    std::cout << "Original string:      \"" << str << "\"\n";
+    std::cout << "Uppercase string:     \"" << modifyStr(cpy, upper) << "\"\n";
+    strcpy(cpy, str);
+    std::cout << "Lowercase string:     \"" << modifyStr(cpy, lower) << "\"\n";
+    strcpy(cpy, str);
+    std::cout << "Flipped-case string:  \"" << modifyStr(cpy, flip) << "\"\n";
+
+    return 0;
+}
+
+// "char (*char_mod_func)(const char&)"
+// Uses a function pointer, where
+// - "char" is the return type of the function passed.
+// - "(*char_mod_func)" is the 'aliased' name of the passed function.
+// - "(const char&)" is type of argument(s) the function takes.
+const char* modifyStr(char* str, char (*char_mod_func)(const char&))
+{
+    size_t i{0};
+    while (str[i] != '\0')
+    {
+        str[i] = char_mod_func(str[i]);
+        ++i;
+    }
+    return str;
+}
+
+Case checkCase(const char& c)
+{
+    if (c >= 65 && c <= 90)
+        return UPPERCASE;
+    else if (c >= 97 && c <= 122)
+        return LOWERCASE;
+    else
+        return NALPHA;
+}
+
+char upper(const char& c)
+{
+    return (checkCase(c) == LOWERCASE ? c - 32 : c);
+}
+
+char lower(const char& c)
+{
+    return (checkCase(c) == UPPERCASE ? c + 32 : c);
+}
+
+char flip(const char& c)
+{
+    Case case_c{checkCase(c)};
+    if (case_c == UPPERCASE)
+        return lower(c);
+    if (case_c == LOWERCASE)
+        return upper(c);
+    else
+        return c;
+}
+#+end_src

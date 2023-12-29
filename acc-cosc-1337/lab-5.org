@@ -1,0 +1,102 @@
+#+title: Lab 5
+
+* Info
+
+Print the sales per store, based on user input.
+
+* C++
+
+#+begin_src C++
+#include <iostream> // std::cin std::cout
+#include <string> // std::string
+#include <iomanip> // std::fixed std::setprecision(n)
+#include <cmath> // std::floor()
+#include <vector> // std::vector
+
+// FORWARD DECLARATIONS
+int getNumberOfStores();
+int getSalesFromStoreNumber(const int&);
+int getPositiveInteger(const std::string&, const int&);
+void displaySalesOf(const int&, const int&);
+
+// GLOBAL CONSTANTS
+constexpr int DOLLAR_VALUE_OF_STAR{100}; // assigned 100 at compile-time
+
+int main() {
+
+    const int NUM_STORES{getNumberOfStores()};
+
+    // Dynamic Array
+    std::vector<int> storeSales;
+
+    for (int storeNumber{1}; storeNumber <= NUM_STORES; storeNumber++) {
+        // append the value return to the store sales array
+        storeSales.push_back(getSalesFromStoreNumber(storeNumber));
+    }
+
+    std::cout << "\n    DAILY SALES" << '\n'
+              << "  (each * == $" << DOLLAR_VALUE_OF_STAR << ")" << '\n' << '\n';
+
+    int storeNumber{1};
+    // foreach loop
+    for (int store : storeSales) {
+        displaySalesOf(storeNumber, store);
+        storeNumber++;
+    }
+}
+
+int getNumberOfStores() {
+    std::cout << "Enter a number of Stores: ";
+
+    // hold this as a variable for readability
+    std::string reprompt{"There must be at least 1 store.\nPlease Enter a postive Number of Stores: "};
+
+    return getPositiveInteger(reprompt, 1);
+}
+
+int getSalesFromStoreNumber(const int& storeNumber) {
+    std::cout << "Enter today's sales for Store " << storeNumber << ": ";
+
+    // hold this as a variable for (better) readability
+    std::string reprompt{"Please enter a positive number of sales for Store " + std::to_string(storeNumber) + ": "};
+
+    return getPositiveInteger(reprompt, 0);
+}
+
+int getPositiveInteger(const std::string& reprompt, const int& minValue) {
+    int returnValue{0};
+
+    // verify if value entered is an integer, if not -> reprompt
+    // tried checking the value of returnValue against minValue in the conditional
+    // but seems to cause undefined behavior as to what the value is
+    while (!(std::cin >> returnValue)) {
+        std::cin.clear();
+        std::cin.ignore(100, '\n');
+
+        std::cout << reprompt;
+    }
+
+    // break the function if the value is what we are looking for, else
+    if (returnValue >= minValue)
+        return returnValue;
+
+    std::cout << reprompt;
+    // recursive solution probably not prefered, but is simpler
+    // nested while would have done the same thing
+    return getPositiveInteger(reprompt, minValue);
+}
+
+void displaySalesOf(const int& storeNumber, const int& storeSales) {
+
+    // rounding
+    // round down from the number of sales + 50
+    // ie. 149 -> 199 -> 100 ... 151 -> 201 -> 200
+    double numStars{std::floor(storeSales / static_cast<double>(DOLLAR_VALUE_OF_STAR) + 0.50)};
+
+    // uses a std::string constructor that prints x number of *
+    // eg. std::string(x, '*');
+    std::string salesAsAsterisks (numStars, '*');
+
+    std::cout << std::left << "Store " << storeNumber << ": " << salesAsAsterisks << '\n';
+}
+#+end_src

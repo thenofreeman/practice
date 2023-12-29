@@ -1,0 +1,39 @@
+#+title: Lab 3
+
+* Info
+
+Calculate property tax based on the properties value, assessed value, and tax rate.
+
+* C++
+
+#+begin_src C++
+#include <iostream> // std::cout, std::cin, std::fixed
+#include <iomanip> // std::setprecision, std::setw
+
+int main() {
+    const double ASSESSED_VALUE_PERCENTAGE{0.60}; // where 1 == 100%
+    double taxRatePer100Dollars{0.0}; // where 100 == 100%
+
+    double actualPropertyValue{0.0}; // in dollars
+
+    std::cout << "Enter the actual property value: $ ";
+    std::cin >> actualPropertyValue;
+    std::cout << "Enter the amount of tax per $100 of assessed value: $ ";
+    std::cin >> taxRatePer100Dollars;
+
+    std::cout << '\n'; // seperator
+
+    double assessedValue{actualPropertyValue * ASSESSED_VALUE_PERCENTAGE};
+
+    // std::fixed sets the formatting method to decimal notation
+    // std::setprecision(2) ensures 2 decimal places
+    std::cout << std::fixed << std::setprecision(2);
+
+    // std::setw(10) ensures width of each line to be 10 chars, and used the default std::right alignment
+    std::cout << "Property Value: $ " << std::setw(10) << actualPropertyValue << '\n';
+    std::cout << "Assessed Value: $ " << std::setw(10) << assessedValue << '\n';
+    std::cout << "Property Tax:   $ " << std::setw(10) << assessedValue * (taxRatePer100Dollars / 100) << '\n';
+
+    return 0;
+}
+#+end_src

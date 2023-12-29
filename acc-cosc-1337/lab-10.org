@@ -1,0 +1,86 @@
+#+title: Lab 10
+
+* Info
+
+Compute the average movies watched by students based on a dynamically allocated array and user input.
+
+* C++
+
+#+begin_src C++
+#include <algorithm>
+#include <iomanip>
+#include <iostream>
+#include <string>
+
+void displayData(int* list, int size);
+double getAverage(int* list, int size);
+int getInt(std::string prompt, int max=100, int min=1);
+double getSum(int* list, int size);
+
+int main(/* int argc, char* argv[] */)
+{
+    int* students;
+    int numStudents{getInt("How many students were surveyed?")};
+
+    students = new int[numStudents];
+
+    for (int i{0}; i < numStudents; ++i) {
+        *(students+i) = getInt(std::string("How many movies has student ") + std::to_string(i+1) + " watched?", 10000, 0);
+    }
+
+    std::sort(students, students+numStudents);
+    displayData(students, numStudents);
+
+    delete[] students;
+    return 0;
+}
+
+int getInt(std::string prompt, int max, int min)
+{
+    std::string str;
+    int num{min-1};
+    while (num == min-1) {
+        std::cout << prompt << ' ';
+        std::getline(std::cin, str);
+
+        try {
+            num = std::stoi(str);
+        } catch (const std::invalid_argument& e) {
+            std::cout << "Not a Number.\n";
+            continue;
+        }
+
+        if (num > max || num < min) {
+            std::cout << "Not a valid Natural Number.\n";
+            num = min-1;
+        }
+    }
+    return num;
+}
+
+void displayData(int* list, int size)
+{
+    std::cout << "\nNumber of Movies Watched\n"
+              << "------------------------\n";
+    for (int i{0}; i < size; ++i)
+        std::cout << *(list + i) << '\n';
+
+    std::cout << "------------------------\n"
+              << size << " students have watched a total " << getSum(list, size) << " movies.\n"
+              << "An average of " << std::fixed << std::showpoint << std::setprecision(1) << getAverage(list, size) << " movies per student.\n";
+}
+
+double getSum(int* list, int size)
+{
+    double sum{0};
+    for (int i{0}; i < size; ++i)
+        sum += *(list + i);
+
+    return sum;
+}
+
+double getAverage(int* list, int size)
+{
+    return getSum(list, size) / size;
+}
+#+end_src

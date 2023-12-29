@@ -1,0 +1,188 @@
+#+title: Lab 9
+
+* Info
+
+Order a list of user inputted songs titles (with artist names), and sort the list by artist.
+
+* C++
+
+#+begin_src C++
+#include <iomanip>
+#include <iostream>
+#include <string>
+
+//
+// Playlist.h
+//
+template <typename T>
+class Playlist
+{
+private:
+    std::string title;
+    size_t listMax;
+    T* items;
+    size_t itemcount;
+
+public:
+    Playlist() = delete;
+    Playlist(std::string title, size_t listMax=10);
+    Playlist(const Playlist<T>& n);
+    ~Playlist();
+
+    size_t getCount();
+    void addItem(std::string artist, std::string title);
+    void sort();
+    void resizeList();
+    T* operator[](size_t index);
+    T* operator=(const Playlist<T>& n);
+};
+
+//
+// Playlist.cpp
+//
+
+template <typename T>
+Playlist<T>::Playlist(std::string title, size_t listMax)
+    : title(title), listMax(listMax), items(new T[listMax]), itemcount()
+{ }
+
+// Copy constructor
+template <typename T>
+Playlist<T>::Playlist(const Playlist<T>& n)
+{
+    items = new T;
+    *items = *n.items;
+}
+
+template <typename T>
+Playlist<T>::~Playlist()
+{
+    delete[] items;
+}
+
+template <typename T>
+void Playlist<T>::addItem(std::string artist, std::string title)
+{
+    if (itemcount >= listMax) resizeList();
+    items[itemcount] = T(artist, title);
+    itemcount++;
+}
+
+// Didn't really test (but seemed to work OK)
+template <typename T>
+void Playlist<T>::resizeList()
+{
+    listMax += 10;
+    T* temp = new T[listMax];
+
+    for (size_t i{0}; i < listMax-10; ++i) {
+        temp[i] = items[i];
+    }
+    delete[] items;
+    items = temp;
+}
+
+template <typename T>
+size_t Playlist<T>::getCount()
+{
+    return itemcount;
+}
+
+template <typename T>
+T* Playlist<T>::operator[](size_t index)
+{
+    return &items[index];
+}
+
+template <typename T>
+T* Playlist<T>::operator=(const Playlist<T>& n)
+{
+    items = new T;
+    *items = *n.items;
+}
+
+template <typename T>
+void Playlist<T>::sort()
+{
+    size_t min{0};
+    for (size_t low{0}; low < itemcount-1; ++low) {
+        min = low;
+        for (size_t cur{low+1}; cur < itemcount; ++cur) {
+            if (items[cur] < items[min]) {
+                min = cur;
+            }
+        }
+        T temp = items[low];
+        items[low] = items[min];
+        items[min] = temp;
+    }
+}
+
+//
+// song.h
+//
+
+struct Song
+{
+public:
+    std::string artist{};
+    std::string title{};
+
+    Song();
+    Song(std::string artist, std::string title);
+
+    bool operator<(Song& song);
+};
+
+//
+// song.cpp
+//
+
+Song::Song() { }
+Song::Song(std::string artist, std::string title) : artist(artist), title(title) { }
+bool Song::operator<(Song& song)
+{
+    return (this->artist < song.artist);
+}
+
+//
+// main.cpp
+//
+
+std::string getString(std::string prompt)
+{
+    std::cout << prompt;
+
+    std::string line;
+    std::getline(std::cin, line);
+
+    return line;
+}
+
+size_t getNum(std::string prompt)
+{
+    int num{std::stoi(getString(prompt))};
+    return num;
+}
+
+int main(/* int argc, char *argv[] */) {
+    Playlist<Song> list("My Jams");
+
+    size_t itemsToAdd_c{getNum("How many songs to add? ")};
+
+    for (size_t i{0}; i < itemsToAdd_c; ++i) {
+        list.addItem(getString("Artist Name: "), getString("Song Title: "));
+    }
+
+    list.sort();
+
+    std::cout << '\n' << std::setw(20) << "Artist" << " " << std::setw(20) << "Title" << std::endl;
+    std::cout << "-----------------------------------------\n";
+
+    for (size_t i{0}; i < list.getCount(); ++i) {
+        std::cout << std::setw(20) << list[i]->artist << " " << std::setw(20) << list[i]->title << std::endl;
+    }
+
+    return 0;
+}
+#+end_src

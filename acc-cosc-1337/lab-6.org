@@ -1,0 +1,78 @@
+#+title: Lab 6
+
+* Info
+
+Find the greatest quarterly sales among divisions based on user input.
+
+* C++
+
+#+begin_src C++
+#include <iostream>
+#include <string>
+#include <iomanip>
+
+double getSales(const std::string&);
+int findHighest(const double[], const int&);
+
+int main(/*int argc, char* argv[] */) {
+    const int numDivisions {4};
+
+    // simultanious arrays acting as a pseudo-tuple type
+    std::string divisionNames[numDivisions] = { "Northeast", "Southeast", "Northwest", "Southwest" };
+    double divisionSales[numDivisions];
+
+    // get sales for each division
+    for (int i = 0; i < numDivisions; ++i){
+        divisionSales[i] = getSales(divisionNames[i]);
+    }
+
+    int greatestSales_i {findHighest(divisionSales, numDivisions)};
+
+    std::cout << '\n' << "The " << divisionNames[greatestSales_i] << " Division had the highest sales this quarter.\nTheir sales were: $"
+              << std::fixed << std::showpoint << std::setprecision(2) << divisionSales[greatestSales_i];
+
+    return 0;
+}
+
+// return the sales figure for a division, based on user input
+double getSales(const std::string& divisionName) {
+    double output {0};
+    bool validInput{false};
+
+    std::cout << "Enter the quarterly sales for the " << divisionName << " division: ";
+
+    while (!validInput) {
+
+    // if input can't be converted to double initial if condition fails
+    if (!(std::cin >> output)) {
+        std::cout << "Sales figures must be a numeric value.\n";
+    } else if (output < 0) {
+        std::cout << "Sales figures cannot be negative.\n";
+    } else {
+        validInput = true;
+    }
+
+    // clear the input stream and ignore up to 100 chars or a newline
+    std::cin.clear();
+    std::cin.ignore(100, '\n');
+
+    if (!validInput) {
+        std::cout << "Please re-enter sales for the " << divisionName << " division: ";
+    }
+    }
+
+    return output;
+}
+
+// return the index to the highest value of the array passed into the function
+int findHighest(const double divisionSales[], const int& numDivisions) {
+    // print divisionname and amount
+    int greatestSales_i {0};
+
+    for (int i = 1; i < numDivisions; ++i) {
+    if (divisionSales[i] > divisionSales[greatestSales_i])
+        greatestSales_i = i;
+    }
+    return greatestSales_i;
+}
+#+end_src

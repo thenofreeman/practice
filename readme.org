@@ -18,6 +18,8 @@ Files are marked with a list of languages they are implemented in, following the
   - [[#random][Random]]
 - [[#books][Books]]
   - [[#coding-the-matrix][Coding the Matrix]]
+- [[#courses][Courses]]
+  - [[#programming-fundamentals-ii-acc-cosc-1337][Programming Fundamentals II (ACC-COSC-1337)]]
 
 * Algorithms
 ** Computations
@@ -52,3 +54,18 @@ Files are marked with a list of languages they are implemented in, following the
 * Books
 ** Coding the Matrix
 - [[./coding-the-matrix/lab-0.5-introduction-to-python.org]] (Python)
+* Courses
+** Programming Fundamentals II (ACC-COSC-1337)
+- [[./acc-cosc-1337/lab-2a.org]] (C++)
+- [[./acc-cosc-1337/lab-2b.org]] (C++)
+- [[./acc-cosc-1337/lab-3.org]] (C++)
+- [[./acc-cosc-1337/lab-4.org]] (C++)
+- [[./acc-cosc-1337/lab-5.org]] (C++)
+- [[./acc-cosc-1337/lab-6.org]] (C++)
+- [[./acc-cosc-1337/lab-7.org]] (C++)
+- [[./acc-cosc-1337/lab-8.org]] (C++)
+- [[./acc-cosc-1337/lab-9.org]] (C++)
+- [[./acc-cosc-1337/lab-10.org]] (C++)
+- [[./acc-cosc-1337/lab-12a.org]] (C++)
+- [[./acc-cosc-1337/lab-12b.org]] (C++)
+- [[./acc-cosc-1337/lab-13.org]] (C++)

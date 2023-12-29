@@ -1,0 +1,86 @@
+#+title: Lab 4
+
+* Info
+
+Calculate the speed of sound using the distance and the medium traveled through.
+
+* C++
+
+#+begin_src C++
+#include <iostream> // std::cin std::cout
+#include <string> // std::string
+#include <iomanip> // std::fixed std::setprecision(n)
+
+int getSubstance();
+int getTravelDistance();
+void resultPrompt(const int&, const std::string&, const double&);
+
+int main() {
+    std::string substanceNames[3]{"air", "water", "steel"};
+    int substanceSpeeds[3]{1'100, 4'900, 16'400};
+
+    std::cout << "This program will tell you how long it takes a sound wave" << '\n'
+            << "to travel a specific distance through a particular medium." << '\n'
+            << '\n';
+
+    // prompt and return the value of
+    int substanceChoice{getSubstance()};
+    int distance{getTravelDistance()};
+
+    double duration{distance/static_cast<double>(substanceSpeeds[substanceChoice-1])};
+
+    resultPrompt(distance, substanceNames[substanceChoice-1], duration);
+
+    return 0;
+}
+
+int getSubstance() {
+    std::cout << "Select a substance for the sound to travel through:" << '\n'
+            << '\t' << "1. Air" << '\n'
+            << '\t' << "2. Water" << '\n'
+            << '\t' << "3. Steel" << '\n'
+            << "Choice: ";
+
+    char choice{0};
+    std::cin >> choice;
+
+    // clear aditional characters from input stream
+    std::cin.clear();
+    std::cin.ignore(100, '\n');
+
+    // check if the ascii value of choice is that of 1, 2, or 3
+    if (choice > 48 && choice <= 51)
+        // return choice's value as its integer representation
+        return choice - 48;
+    else
+        std::cout << "Invalid substance selection, try again." << '\n' << '\n';
+
+    return getSubstance();
+
+}
+
+int getTravelDistance() {
+    std::cout << '\n' << "Enter the number of feet the sound wave will travel through: ";
+
+    int choice{0};
+    std::cin >> choice;
+
+    if (static_cast<int>(choice) >= 0)
+        return choice;
+    else
+        std::cout << "Invalid distance, try again." << '\n';
+
+    return getTravelDistance();
+}
+
+void resultPrompt(const int &distance, const std::string &substanceName, const double &duration) {
+    std::cout << std::fixed << std::setprecision(4) // force 4 decimal places
+              << "The sound wave will travel "
+              << distance
+              << " feet through "
+              << substanceName
+              << " in "
+              << duration
+              << " seconds.";
+}
+#+end_src

@@ -1,0 +1,409 @@
+#+title: Lab 8
+
+*This 2 year-old program is very broken, and I don't feel like fixing it. It is only here for completeness*
+
+* Info
+
+Compute payroll based on file data or user input.
+
+#+name: payroll.dat
+#+begin_src
+40.0   10.00
+38.5    9.50
+16.0    7.50
+22.5    9.50
+40.0    8.00
+38.0    8.00
+40.0    9.00
+#+end_src
+
+#+name: payroll2.dat
+#+begin_src
+40.0   10.00
+30.0   10.00
+20.0   10.00
+10.0   10.00
+5.0    10.00
+#+end_src
+
+#+name: payroll3.dat
+#+begin_src
+45.0    12.00
+32.25   11.00
+27.50   18.00
+16.20    9.00
+5.5     15.00
+#+end_src
+
+* C++
+
+#+begin_src C++
+#include <fstream>
+#include <iomanip>
+#include <iostream>
+#include <string>
+#include <utility>
+#include <vector>
+
+enum EntryMode {
+    FILE_m, MANUAL_m,
+};
+
+class PayRoll
+{
+private:
+    double hourlyPay;
+    double hoursWorked;
+
+public:
+    PayRoll ();
+    PayRoll (const double&, const double&);
+
+    void setHourlyPay(const double&);
+    void setHoursWorked(const double&);
+    double getHourlyPay();
+    double getHoursWorked();
+    double getGrossPay();
+
+};
+
+double promptNum(const char* reprompt, const double& defaultValue, const int& rangeMax=100, const int& rangeMin=0);
+bool promptYN(const std::string& prompt);
+auto findFiles() -> std::pair<std::vector<std::string>, int>;
+
+// uncomment the following preprocessor directive to (attempt to) dynamically find files programically
+// works fine on Linux (debian), and should work just as well on MacOS, too.
+// but Windows requires a complete different set of logic for std <= c++11,
+// and I don't have an active Windows environment to test.
+// Still satisfies assignment instructions without it.
+
+#define USE_FIND_FILES_FUNCTION
+
+int main(/* int argc, char* argv[] */)
+{
+
+    EntryMode MODE;
+
+    std::string infileName;
+
+// attempt to detect files
+// This will run if the Macro USE_FIND_FILES_FUNCTION is defined above
+#ifdef USE_FIND_FILES_FUNCTION
+    int numFiles;
+    std::vector<std::string> foundFiles;
+
+    auto filesPair = findFiles();
+    foundFiles = filesPair.first;
+    numFiles = filesPair.second;
+
+    if (numFiles == 1 || numFiles == -1) {
+        std::cout << "Found \"" << foundFiles[0] << "\". ";
+        if (promptYN("\nParse data from this file? (Y/n): ")) {
+            MODE = FILE_m;
+            infileName = foundFiles[0];
+        } else {
+            MODE = MANUAL_m;
+        }
+    } else if (numFiles > 1) {
+        std::cout << "Multiple *.dat files found. Please make a selection:\n";
+
+        for (int i = 0; i < numFiles; ++i) {
+            std::cout << i+1 << ": " << foundFiles[i] << ((i == 0) ? " (default)" : "") << '\n';
+        }
+        std::cout << numFiles+1 << ": " << "[Manual Entry]\n";
+
+        int selection = promptNum("Selection: ", 1, numFiles+1, 1);
+        if (selection == numFiles+1) {
+            MODE = MANUAL_m;
+        } else {
+            MODE = FILE_m;
+            infileName = foundFiles[selection-1];
+        }
+    } else {
+        std::cout << "No *.dat file(s) found in directory.";
+        if (promptYN("\nEnter info manually? (Y/n): ")) {
+            MODE = MANUAL_m;
+        } else {
+            std::cout << "Quitting ...\n";
+            exit(0);
+        }
+    }
+#endif // USE_FIND_FILES_FUNCTION
+
+// This will run if the Macro USE_FIND_FILES_FUNCTION is NOT defined above
+#ifndef USE_FIND_FILES_FUNCTION
+    if (promptYN("Search for \"payroll.dat\" file? (Y/n): ")) {
+        infileName = "payroll.dat";
+        MODE = FILE_m;
+    } else {
+        if (promptYN("\nEnter info manually? (Y/n): ")) {
+            MODE = MANUAL_m;
+        } else {
+            std::cout << "Quitting ...\n";
+            exit(0);
+        }
+    }
+#endif // USE_FIND_FILES_FUNCTION
+
+    std::ifstream infile(infileName);
+
+    if (MODE == FILE_m && !infile) {
+        std::cout << "The file \"" << infileName << "\" couldn't be opened or doesn't exist.";
+        if (promptYN("\nEnter info manually? (Y/n): ")) {
+            MODE = MANUAL_m;
+        } else {
+            std::cout << "Quitting ...\n";
+            exit(0);
+        }
+    }
+
+    int numEmployees{};
+    PayRoll *employees;
+
+    double hoursWorked;
+    double hourlyRate;
+    const double MINIMUM_WAGE{7.25};
+
+    if (MODE == MANUAL_m) {
+        std::cout << "\nManual mode selected ...\n";
+
+        numEmployees = promptNum("How many employees are there? (3): ", 3);
+        employees = new PayRoll[numEmployees];
+
+        std::string prompt;
+        for (int i{0}; i < numEmployees; ++i) {
+            prompt = "\nEmployee " + std::to_string(i+1) + " hours worked: ";
+            hoursWorked = promptNum(prompt.c_str(), 0);
+
+            prompt = "\nEmploye " + std::to_string(i+1) + " hourly rate: $ ";
+            hourlyRate = promptNum(prompt.c_str(), MINIMUM_WAGE);
+
+            employees[i].setHoursWorked(hoursWorked);
+            employees[i].setHourlyPay(hourlyRate);
+        }
+
+    } else if (MODE == FILE_m) {
+        std::cout << "\nFile mode selected ...\n";
+        std::cout << "Continuing with file: \"" << infileName << "\" ...\n";
+
+        std::string line;
+        while (std::getline(infile, line)) {
+            numEmployees++;
+        }
+        employees = new PayRoll[numEmployees];
+
+        // clear errors for eof and reset to beginning of file
+        infile.clear();
+        infile.seekg(0, std::ios::beg);
+
+        for (int i{0}; i < numEmployees; ++i) {
+            infile >> hoursWorked;
+            infile >> hourlyRate;
+
+            employees[i].setHoursWorked(hoursWorked);
+            employees[i].setHourlyPay(hourlyRate);
+        }
+    }
+
+  infile.close();
+
+  std::cout << "\nEmployee" << " " << std::setw(9) << "Gross Pay" << " " << "Details\n";
+  std::cout << "========" << " " << "=========" << " " << "===================\n";
+
+    for (int i = 0; i < numEmployees; i++) {
+        std::cout << std::setw(7) << i+1 << ":" << " ";
+        std::cout << std::fixed << std::showpoint << std::setprecision(2) << "$" << std::setw(8) << employees[i].getGrossPay();
+        std::cout << " [" << employees[i].getHoursWorked() << "h @ $" << std::setw(5) << employees[i].getHourlyPay() << "/h]" << "\n";
+    }
+
+    delete[] employees;
+
+    return 0;
+}
+
+#if defined(_WIN32) // Running Windows (unfortunately.. :) )
+  #include <Windows.h> // needed to access windows filesystem
+#else
+  #include <dirent.h> // to find files in Unix-like environments
+  #include <cstring>
+#endif
+
+double promptNum(const char* prompt, const double& defaultValue, const int& rangeMax, const int& rangeMin)
+{
+  bool validInput{false};
+  std::string line;
+
+  double output{defaultValue};
+
+  while(!validInput) {
+
+    std::cout << prompt;
+    std::getline(std::cin, line);
+
+    // if user hits enter without typing any characters
+    // use default value
+    if (line[0] == '\0') {
+        validInput = true;
+        std::cout << defaultValue;
+    } else {
+        std::string arg0 {line.substr(0, line.find(' '))};
+
+        // Attempt to cast the inputted text to an integer value
+        // if it doesn't work, it is not a number, reprompt
+        try {
+            output = std::stoi(arg0);
+        }
+        catch (const std::invalid_argument& e) {
+            std::cout << "Not a number\n";
+            validInput = false;
+            continue;
+        }
+
+        if ((output <= rangeMax) && (output >= rangeMin)) {
+            validInput = true;
+        } else {
+            validInput = false;
+            std::cout << "Not a valid Natural number\n";
+        }
+
+        // clear the input stream and ignore up to 100 chars or a newline
+        // std::cin.clear();
+        // std::cin.ignore(100, '\n');
+     }
+  }
+
+  return output;
+}
+
+bool promptYN(const std::string& prompt)
+{
+    while (true) {
+        std::cout << prompt;
+
+        std::string selection;
+        std::getline(std::cin, selection);
+
+        switch (selection[0]) {
+            case 'n':
+                // [[fallthrough]]; // std=c++17
+            case 'N':
+                // [[fallthrough]]; // std=c++17
+                return false;
+                break;
+            case 'y':
+                // [[fallthrough]]; // std=c++17
+            case 'Y':
+                // [[fallthrough]]; // std=c++17
+            case '\0': // User enters nothing, ie. ENTER
+                return true;
+            default:
+                std::cout << "Please make a selection.";
+                break;
+        }
+    }
+}
+
+auto findFiles() -> std::pair<std::vector<std::string>, int>
+{
+    std::vector<std::string> filenames;
+    int numFiles{0};
+
+#if defined(_WIN32) // Running Windows (unfortunately.. :) )
+
+  // NOT my code within this snippet.
+  // I do haven't looked dove into how it's implemented either.
+  // Only included after I remembered my solution for parsing files is "unix" only.
+  // And I have yet to do any C++ targeting windows.
+  // Without all of this mess the project would still satisfy the assignment instructions.
+
+    using namespace std;
+
+    // BEGIN SNIPPET
+    std::string folder;
+    string search_path = folder + "/*.dat";
+    WIN32_FIND_DATA fd;
+    HANDLE hFind = ::FindFirstFile(search_path.c_str(), &fd);
+    if (hFind != INVALID_HANDLE_VALUE) {
+        do {
+            if(! (fd.dwFileAttributes & FILE_ATTRIBUTE_DIRECTORY) ) {
+                filesnames.push_back(fd.cFileName);
+                numFiles++;
+            }
+        } while(::FindNextFile(hFind, &fd));
+        ::FindClose(hFind);
+    }
+
+    // END SNIPPET
+
+#else // Running Linux or MacOS
+
+    // this bit uses some messy C code.
+    // Which unfortunately was the only compatable solution I came across to
+    // search a directory for a list of files.
+    // There are better solutions, but rely on std=c++14 or std=c++17
+
+    DIR *directory;
+    char *token1, *token2;
+    int validExt;
+    struct dirent *file;
+    directory = opendir("."); // use the current directory
+    if (directory)
+    {
+        // run until
+        while ((file = readdir(directory)) != NULL)
+        {
+            // get the string token before the .extension
+            token1 = strtok(file->d_name, ".");
+            // get the extension of the file
+            token2 = strtok(NULL, ".");
+            if(token2 != NULL)
+            {
+                // check if token2 has the extension "dat"
+                validExt = strcmp(token2, "dat");
+                if(validExt == 0)
+                {
+                    // add the string token (filename) to the vector of filenames
+                    filenames.push_back(token1);
+                    filenames.back().append(".dat");
+                    numFiles++;
+                }
+            }
+        }
+        closedir(directory);
+    }
+#endif // determine OS
+    return { filenames, numFiles };
+}
+
+PayRoll::PayRoll () {}
+
+PayRoll::PayRoll (const double& hourlyPay, const double& hoursWorked)
+    : hourlyPay(hourlyPay),
+      hoursWorked(hoursWorked)
+{}
+
+void PayRoll::setHourlyPay(const double& hourlyPay)
+{
+    this->hourlyPay = hourlyPay;
+}
+
+void PayRoll::setHoursWorked(const double& hoursWorked)
+{
+    this->hoursWorked = hoursWorked;
+}
+
+double PayRoll::getHourlyPay()
+{
+    return this->hourlyPay;
+}
+
+double PayRoll::getHoursWorked()
+{
+    return this->hoursWorked;
+}
+
+double PayRoll::getGrossPay()
+{
+    return this->hourlyPay * this->hoursWorked;
+}
+#+end_src
