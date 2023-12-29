@@ -141,13 +141,38 @@ sum(L)/len(L)
 
 * Task 0.5.11
 
-#+begin_src python :session
+Write a double list comprehension over the lists ['A','B','C'] and [1,2,3] whose value is the list of all possible two-element lists [letter, number].
+
+That is, the value is [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2],['B', 3], ['C', 1], ['C', 2], ['C', 3]]
+
+#+begin_src python :session :results verbatim
+L = ['A', 'B', 'C']
+M = [1, 2, 3]
+
+[[l, m] for l in L for m in M]
 #+end_src
+
+#+RESULTS:
+: [['A', 1], ['A', 2], ['A', 3], ['B', 1], ['B', 2], ['B', 3], ['C', 1], ['C', 2], ['C', 3]]
 
 * Task 0.5.12
 
+Suppose LofL has been assigned a list whose elements are themselves lists of numbers. Write an expression that evaluates to the sum of all the numbers in all the lists.
+
+The expression has the form =sum([sum(...= and includes one comprehension.
+
+Test your expression after assigning =[[.25, .75, .1], [-1, 0], [4, 4, 4, 4]]= to LofL.
+
+Note that your expression should work for a list of any length.
+
 #+begin_src python :session
+LofL = [[.25, .75, .1], [-1, 0], [4, 4, 4, 4]]
+
+sum([sum(L) for L in LofL])
 #+end_src
+
+#+RESULTS:
+: 16.1
 
 * Task 0.5.13
 
