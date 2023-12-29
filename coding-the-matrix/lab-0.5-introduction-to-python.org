@@ -176,13 +176,29 @@ sum([sum(L) for L in LofL])
 
 * Task 0.5.13
 
+Find out what happens if the length of the left-hand side list does not match the length of the right-hand side list when unpacking lists.
+
 #+begin_src python :session
+[x, y, z] = [4, 5, 6, 7]
 #+end_src
+
+#+RESULTS:
+: error: too many items to unpack
+
 
 * Task 0.5.14
+Suppose S is a set of integers, e.g. ={−4, −2, 1, 2, 5, 0}=.
 
-#+begin_src python :session
+Write a triple comprehension whose value is a list of all three-element tuples (i, j, k) such that i, j, k are elements of S whose sum is zero.
+
+#+begin_src python :session :results verbatim
+S = {-4, -2, 1, 2, 5, 0}
+
+[(i, j, k) for i in S for j in S for k in S if i+j+k == 0]
 #+end_src
+
+#+RESULTS:
+: [(0, 0, 0), (0, 2, -2), (0, -2, 2), (1, 1, -2), (1, -2, 1), (2, 0, -2), (2, 2, -4), (2, -4, 2), (2, -2, 0), (-4, 2, 2), (-2, 0, 2), (-2, 1, 1), (-2, 2, 0)]
 
 * Task 0.5.15
 
