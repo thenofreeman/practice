@@ -33,7 +33,7 @@ Files are marked with a list of languages they are implemented in, following the
 - [[./project-euler/0001-multiples-of-3-and-5.org]] (C++)
 ** Rosetta Code
 - [[./rosetta-code/100-doors.org]] (C++)
-- [[./rosetta-code/fizzbuzz.org]] (C++)
+- [[./rosetta-code/fizzbuzz.org]] (C++, JavaScript)
 - [[./rosetta-code/towers-of-hanoi.org]] (C++)
 ** Random
 - [[./random/0000-number-to-words.org]] (C++)
