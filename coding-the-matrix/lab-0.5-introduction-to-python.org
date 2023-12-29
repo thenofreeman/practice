@@ -11,6 +11,17 @@ Use Python to find the number of minutes in a week.
 #+RESULTS:
 : 10080
 
+* Task 0.5.2
+
+Find the remainder of 2304811 divided by 47 without using the modulo operator, %.
+
+#+begin_src python :session
+2304811 - ((2304811 // 47) * 47)
+#+end_src
+
+#+RESULTS:
+: 25
+
 * Task 0.5.7
 
 The value of the previous comprehension,
