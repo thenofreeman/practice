@@ -33,6 +33,26 @@ Enter a Boolean expression to test whether the sum of 673 and 909 is divisible b
 #+RESULTS:
 : False
 
+* Task 0.5.4
+
+Assign the value -9 to x and 1/2 to y.
+
+Predict the value of the following expression, then enter it to check your prediction:
+
+#+begin_src python
+2**(y+1/2) if x+10<0 else 2**(y-1/2)
+#+end_src
+
+#+begin_src python :session
+x = -9
+y = 1/2
+
+2**(y+1/2) if x+10<0 else 2**(y-1/2)
+#+end_src
+
+#+RESULTS:
+: 1.0
+
 * Task 0.5.7
 
 The value of the previous comprehension,
