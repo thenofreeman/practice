@@ -129,8 +129,15 @@ T = {3,4,5,6}
 
 * Task 0.5.10
 
+Write an expression whose value is the average of the elements of the list [20, 10, 15, 75].
+
 #+begin_src python :session
+L = [20, 10, 15, 75]
+sum(L)/len(L)
 #+end_src
+
+#+RESULTS:
+: 30.0
 
 * Task 0.5.11
 
