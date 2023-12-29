@@ -10,24 +10,24 @@
 
 * Challenges
 ** Leet Code
-- [[./leet-code/0001-two-sum.org]]
-- [[./leet-code/0002-add-two-numbers.org]]
-- [[./leet-code/0003-longest-substring-without-repeating-characters.org]]
-- [[./leet-code/0009-palindrome-number.org]]
-- [[./leet-code/0013-roman-to-integer.org]]
-- [[./leet-code/0020-valid-parentheses.org]]
-- [[./leet-code/0383-ransom-note.org]]
-- [[./leet-code/0412-fizz-buzz.org]]
-- [[./leet-code/0876-middle-of-the-linked-list.org]]
-- [[./leet-code/1342-number-of-steps-to-reduce-a-number-to-zero.org]]
-- [[./leet-code/1480-running-sum-of-1d-array.org]]
-- [[./leet-code/1672-richest-customer-wealth.org]]
+- [[./leet-code/0001-two-sum.org]] (C++)
+- [[./leet-code/0002-add-two-numbers.org]] (C++)
+- [[./leet-code/0003-longest-substring-without-repeating-characters.org]] (C++)
+- [[./leet-code/0009-palindrome-number.org]] (C++)
+- [[./leet-code/0013-roman-to-integer.org]] (C++)
+- [[./leet-code/0020-valid-parentheses.org]] (C++)
+- [[./leet-code/0383-ransom-note.org]] (C++)
+- [[./leet-code/0412-fizz-buzz.org]] (C++)
+- [[./leet-code/0876-middle-of-the-linked-list.org]] (C++)
+- [[./leet-code/1342-number-of-steps-to-reduce-a-number-to-zero.org]] (C++)
+- [[./leet-code/1480-running-sum-of-1d-array.org]] (C++)
+- [[./leet-code/1672-richest-customer-wealth.org]] (C++)
 ** Project Euler
-- [[./project-euler/0001-multiples-of-3-and-5.org]]
+- [[./project-euler/0001-multiples-of-3-and-5.org]] (C++)
 ** Rosetta Code
-- [[./rosetta-code/100-doors.org]]
-- [[./rosetta-code/fizzbuzz.org]]
-- [[./rosetta-code/towers-of-hanoi.org]]
+- [[./rosetta-code/100-doors.org]] (C++)
+- [[./rosetta-code/fizzbuzz.org]] (C++)
+- [[./rosetta-code/towers-of-hanoi.org]] (C++)
 * Books
 ** Coding the Matrix
-- [[./coding-the-matrix/lab-0.5-introduction-to-python.org]]
+- [[./coding-the-matrix/lab-0.5-introduction-to-python.org]] (Python)
