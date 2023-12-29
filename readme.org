@@ -1,5 +1,11 @@
 #+title: Code Challenges
 
+This repository consists of single-file programs written in various languages that emphasize some interesting coding task or challenge.
+
+Programs were written over a wide range of dates, for a wide variety of purposes (generally, for either learning, practice or demonstration for others) covering a wider range of personal skill-level in each respective language/tool.
+
+Files are marked with a list of languages they are implemented in, following their respective links.
+
 * Content :toc:
 - [[#challenges][Challenges]]
   - [[#leet-code][Leet Code]]
