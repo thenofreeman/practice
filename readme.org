@@ -1,11 +1,15 @@
 #+title: Code Challenges
 
 * Content :toc:
-- [[#leet-code][Leet Code]]
-- [[#project-euler][Project Euler]]
-- [[#rosetta-code][Rosetta Code]]
+- [[#challenges][Challenges]]
+  - [[#leet-code][Leet Code]]
+  - [[#project-euler][Project Euler]]
+  - [[#rosetta-code][Rosetta Code]]
+- [[#books][Books]]
+  - [[#coding-the-matrix][Coding the Matrix]]
 
-* Leet Code
+* Challenges
+** Leet Code
 - [[./leet-code/0001-two-sum.org]]
 - [[./leet-code/0002-add-two-numbers.org]]
 - [[./leet-code/0003-longest-substring-without-repeating-characters.org]]
@@ -18,9 +22,12 @@
 - [[./leet-code/1342-number-of-steps-to-reduce-a-number-to-zero.org]]
 - [[./leet-code/1480-running-sum-of-1d-array.org]]
 - [[./leet-code/1672-richest-customer-wealth.org]]
-* Project Euler
+** Project Euler
 - [[./project-euler/0001-multiples-of-3-and-5.org]]
-* Rosetta Code
+** Rosetta Code
 - [[./rosetta-code/100-doors.org]]
 - [[./rosetta-code/fizzbuzz.org]]
 - [[./rosetta-code/towers-of-hanoi.org]]
+* Books
+** Coding the Matrix
+- [[./coding-the-matrix/lab-0.5-introduction-to-python.org]]
