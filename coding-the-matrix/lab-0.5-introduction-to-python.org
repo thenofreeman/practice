@@ -53,6 +53,28 @@ y = 1/2
 #+RESULTS:
 : 1.0
 
+* Task 0.5.5
+
+Write a comprehension over ={1, 2, 3, 4, 5}= whose value is the set consisting of the squares of the first five positive integers.
+
+#+begin_src python :session
+{x*x for x in {1,2,3,4,5}}
+#+end_src
+
+#+RESULTS:
+: {1, 4, 9, 16, 25}
+
+* Task 0.5.6
+
+Write a comprehension over {0, 1, 2, 3, 4} whose value is the set consisting of the first five powers of two, starting with 20.
+
+#+begin_src python :session
+{2**x for x in {0,1,2,3,4}}
+#+end_src
+
+#+RESULTS:
+: {1, 2, 4, 8, 16}
+
 * Task 0.5.7
 
 The value of the previous comprehension,
