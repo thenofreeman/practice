@@ -1,4 +1,4 @@
-#+title: Code Challenges
+#+title: Code Practice
 
 This repository consists of single-file programs written in various languages that emphasize some interesting coding task or challenge.
 
@@ -7,6 +7,10 @@ Programs were written over a wide range of dates, for a wide variety of purposes
 Files are marked with a list of languages they are implemented in, following their respective links.
 
 * Content :toc:
+- [[#algorithms][Algorithms]]
+  - [[#computations][Computations]]
+  - [[#searching][Searching]]
+  - [[#sorting][Sorting]]
 - [[#challenges][Challenges]]
   - [[#leet-code][Leet Code]]
   - [[#project-euler][Project Euler]]
@@ -15,6 +19,13 @@ Files are marked with a list of languages they are implemented in, following the
 - [[#books][Books]]
   - [[#coding-the-matrix][Coding the Matrix]]
 
+* Algorithms
+** Computations
+- [[./algorithms/factorial.org]] (C++)
+** Searching
+- [[./algorithms/binary-search.org]] (C++)
+** Sorting
+- [[./algorithms/selection-sort.org]] (C++)
 * Challenges
 ** Leet Code
 - [[./leet-code/0001-two-sum.org]] (C++)
