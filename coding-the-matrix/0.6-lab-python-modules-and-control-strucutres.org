@@ -1,1 +1,68 @@
 #+title: 0.6 Lab - Python Modules And Control Strucutres
+
+* Task 0.6.1
+
+Use procedures defined by the math module to compute the square root of 3, and raise it to the power of 2. The result might not be what you expect.
+
+Keep in mind that Python represents nonintegral real numbers with limited precision, so the answers it gives are only approximate.
+
+Next compute the square root of -1, the cosine of π, and the natural logarithm of e.
+
+#+begin_src python :session
+import math
+
+math.sqrt(3)**2
+#+end_src
+
+#+RESULTS:
+: 2.9999999999999996
+
+#+begin_src python :results output
+import cmath # needed for complex arithmetic
+import math
+
+print(cmath.sqrt(-1))
+print(math.cos(math.pi))
+print(math.log(math.e, math.e))
+#+end_src
+
+#+RESULTS:
+: 1j
+: -1.0
+: 1.0
+
+* Task 0.6.2
+
+The module random defines a procedure randint(a,b) that returns an integer chosen uniformly at random from among {a, a + 1, . . . , b}.
+
+Try calling randint a few times. Then write a one-line procedure movie review(name) that takes as argument a string naming a movie, and returns a string review selected uniformly at random from among two or more alternatives
+
+(Suggestions: “See it!”, “A gem!”, “Ideological claptrap!”)
+
+#+begin_src python :session :results verbatim
+from random import randint
+
+reviews = ["see it!", "A gem!", "Ideological claptrap!"]
+
+def movie_review(name):
+    return f'{name}: {reviews[randint(0, len(reviews))]}'
+
+movie_review("Some Movie")
+#+end_src
+
+#+RESULTS:
+: Some Movie: see it!
+
+* Task 0.6.2
+
+In Tasks 0.5.30 and 0.5.31 of Lab 0.5, you wrote procedures dict2list(dct, keylist) and list2dict(L, keylist).
+
+Download the file dictutil.py from the resource page for Coding the Matrix.
+
+Edit the file, replacing each occurence of pass with the appropriate statement.
+
+Import this module, and test the procedures. We might have occasion to use this module in the future.
+
+#+begin_src python :session
+
+#+end_src
