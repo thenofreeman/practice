@@ -1,4 +1,4 @@
-#+title: Code Practice
+#+title: Practice
 
 This repository consists of question-answers and single-file programs written in various languages that emphasize some interesting coding task or educational challenge.
 
