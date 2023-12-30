@@ -56,6 +56,8 @@ Program files are marked with a list of languages they are implemented in, follo
 ** Coding the Matrix
 - [[./coding-the-matrix/0.5-lab-introduction-to-python.org]] (Python)
 - [[./coding-the-matrix/0.6-lab-python-modules-and-control-strucutres.org]] (Python)
+- [[./coding-the-matrix/0.7-review-questions.org]] (Linear Algebra)
+- [[./coding-the-matrix/0.8-problems.org]] (Python, Linear Algebra, Probability)
 * Courses
 ** Programming Fundamentals II (ACC-COSC-1337)
 - [[./acc-cosc-1337/lab-2a.org]] (C++)
