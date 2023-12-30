@@ -21,6 +21,7 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[#courses][Courses]]
   - [[#programming-fundamentals-ii-acc-cosc-1337][Programming Fundamentals II (ACC-COSC-1337)]]
   - [[#computer-architecture-and-machine-language-acc-cosc-2325][Computer Architecture and Machine Language (ACC-COSC-2325)]]
+  - [[#responsive-web-design-freecodecamp][Responsive Web Design (freeCodeCamp)]]
 
 * Algorithms
 ** Computations
@@ -77,3 +78,9 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[./acc-cosc-2325/lab-1-fade-without-delay.org]] (C++)
 - [[./acc-cosc-2325/lab-2-toggle-button.org]] (C++)
 - [[./acc-cosc-2325/lab-3-cycle-lights.org]] (C++)
+** Responsive Web Design (freeCodeCamp)
+- [[./free-code-camp/01-tribute-page/]] (HTML/CSS)
+- [[./free-code-camp/02-survey-form-page/]] (HTML/CSS)
+- [[./free-code-camp/03-product-page/]] (HTML/CSS)
+- [[./free-code-camp/04-technical-docs-page/]] (HTML/CSS)
+- [[./free-code-camp/05-personal-portfolio-page/]] (HTML/CSS)

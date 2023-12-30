@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+	<style>
+		* {
+			font-family: "Overpass", sans-serif;
+			color: whitesmoke;
+		}
+		body {
+			background-image: url("https://images.unsplash.com/photo-1530508777238-14544088c3ed?ixlib=rb-1.2.1&auto=format&fit=crop&w=2468&q=80");
+			background-size: 100%;
+		}
+		main {
+			background-color: #40407a88;
+			margin: 10%;
+			border-radius: 4px;
+		}
+		h1 {
+			text-align: center;
+			color: #ffda79;
+		}
+		#description {
+			text-align: center;
+		}
+		#campaign-logo {
+			height: auto;
+			display: block;
+			max-width: 25%;
+			margin: 0 auto;
+			padding-top: 2em;
+		}
+		form {
+			background-color: #2c2c54bb;
+		}
+		.form-field {
+			width: 100%;
+			border-radius: 4px;
+			border-style: hidden;
+			padding: 1em;
+			color: #2c2c54;
+			font-size: 1em;
+            box-sizing: border-box;
+		}
+		label {
+			display: flex;
+		}
+		.form-group {
+			padding: 1em 2em;
+		}
+		footer {
+			text-align: center;
+		}
+		.lifeform-radio {
+			margin-right: 0.65em;
+		}
+		.comm-checkbox {
+			margin-right: 0.65em;
+		}
+		.comment-box {
+			resize: vertical;
+			min-height: 3em;
+		}
+		#submit {
+			background-color: #ffda79;
+			margin: 0 0 2em;
+		}
+	</style>
+	<head>
+		<link
+			href="https://fonts.googleapis.com/css?family=Overpass&display=swap"
+			rel="stylesheet"
+		/>
+		<meta charset="UTF-8" />
+		<title>Musk2048 Newsletter</title>
+	</head>
+	<body>
+		<main>
+			<img
+				src="../res/musk-campaign-no-subtext.png"
+				id="campaign-logo"
+				alt=""
+			/>
+			<h1 id="title">Musk2048 Newsletter Signup</h1>
+			<p id="description">
+				Keep up to date with Elon Musk's campaign for the 2048 Interplanetary
+				Presidential Election
+			</p>
+			<form id="survey-form">
+				<div class="form-group">
+					<label id="name-label">Name</label>
+					<input
+						type="text"
+						class="form-field"
+						id="name"
+						placeholder="Enter Your Name..."
+						required
+					/>
+				</div>
+				<div class="form-group">
+					<label id="email-label">Email</label>
+					<input
+						type="email"
+						class="form-field"
+						id="email"
+						placeholder="Enter Your Email..."
+						required
+					/>
+				</div>
+				<div class="form-group">
+					<label id="number-label">Age</label>
+					<input
+						type="number"
+						id="number"
+						class="form-field"
+						min="0"
+						max="120"
+						placeholder="Enter Your Age..."
+						required
+					/>
+				</div>
+				<div class="form-group">
+					<label id="dropdown-label">Select Your Planet</label>
+					<select id="dropdown" class="form-field" required>
+						<option value="earth">Earth</option>
+						<option value="mars">Mars</option>
+						<option value="moon">The Moon</option>
+						<option value="proxima-centauri-b">Proxima Centauri B</option>
+						<option value="other">Other</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<p>What category of life form do you identify with</p>
+					<label
+						><input
+							type="radio"
+							value="humaniod"
+							name="lifeform-type"
+							class="lifeform-radio"
+						/>Humanoid</label
+					>
+					<label
+						><input
+							type="radio"
+							value="silicon-based"
+							name="lifeform-type"
+							class="lifeform-radio"
+						/>Silicon Based</label
+					>
+					<label
+						><input
+							type="radio"
+							value="cybernetic"
+							name="lifeform-type"
+							class="lifeform-radio"
+						/>Cybernetic</label
+					>
+					<label
+						><input
+							type="radio"
+							value="other"
+							name="lifeform-type"
+							class="lifeform-radio"
+						/>Other</label
+					>
+					<label
+						><input
+							type="radio"
+							value="prefer-no"
+							name="lifeform-type"
+							class="lifeform-radio"
+						/>Prefer not to say</label
+					>
+				</div>
+				<div class="form-group">
+					<p>
+						What type(s) of communications would you like to receive? (Select
+						all that apply)
+					</p>
+					<label
+						><input
+							type="checkbox"
+							value="speaking"
+							name="comms-to-receive"
+							class="comm-checkbox"
+						/>Speaking Events</label
+					>
+					<label
+						><input
+							type="checkbox"
+							value="policy"
+							name="comms-to-receive"
+							class="comm-checkbox"
+						/>Policy Adjustments</label
+					>
+					<label
+						><input
+							type="checkbox"
+							value="updates"
+							name="comms-to-receive"
+							class="comm-checkbox"
+						/>Weekly Updates</label
+					>
+					<label
+						><input
+							type="checkbox"
+							value="fundraising"
+							name="comms-to-receive"
+							class="comm-checkbox"
+						/>Fundraising Campaigns</label
+					>
+					<label
+						><input
+							type="checkbox"
+							value="memes"
+							name="comms-to-receive"
+							class="comm-checkbox"
+						/>Spicy Memes</label
+					>
+				</div>
+				<div class="form-group">
+					<textarea
+						name="comments"
+						placeholder="Enter any additional comments"
+						class="form-field comment-box"
+						max-length="280"
+					></textarea>
+				</div>
+				<div class="form-group">
+					<button id="submit" class="form-field" type="submit">Submit</button>
+				</div>
+			</form>
+        </main>
+	</body>
+	<footer>
+		<!-- <h5>Source: wikipedia</h5> -->
+		<h6>Eductational Project By: Nolan Freeman 2019</h6>
+	</footer>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<link rel="stylesheet" type="text/css" href="styles.css" />
+		<meta charset="UTF-8" />
+		<title>Box Documentation</title>
+		<link
+			href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div id="product-header">
+			<div id="product-header-image-div">
+				<img src="../../res/fcc-product-page-shapes-logo.png" id="product-header-img" alt="" />
+			</div>
+			<nav id="product-nav-bar">
+				<a href="https://nolanfreeman.github.io/fcc-responsive-web-design/the_box-product_page/" class="product-nav-link">Back to Product Page</a>
+			</nav>
+		</div>
+		<nav id="navbar">
+			<header>Box Documentation</header>
+			<ul id="nav-link-list">
+				<li>
+					<a href="#Introduction" class="nav-link">Introduction</a>
+				</li>
+				<li>
+					<a href="#Prerequisites" class="nav-link">Prerequisites</a>
+				</li>
+				<li>
+					<a href="#Your_First_Box" class="nav-link">Your First Box</a>
+				</li>
+				<li>
+					<a href="#Configuring_Materials" class="nav-link"
+						>Configuring Materials</a
+					>
+				</li>
+				<li>
+					<a href="#Constructing_Your_Box" class="nav-link"
+						>Constructing Your Box</a
+					>
+				</li>
+				<li>
+					<a href="#Using_The_Box" class="nav-link">Using The Box</a>
+				</li>
+				<li>
+					<a href="#What_Now" class="nav-link">What Now</a>
+				</li>
+			</ul>
+		</nav>
+		<main id="main-doc">
+				<img
+					src="../../res/fcc-product-page-box-logo.png"
+					alt=""
+					id="intro-image"
+				/>
+			<section class="main-section" id="Introduction">
+				<header>
+					Introduction
+				</header>
+				<p>
+					<em>The Box</em> is a revolution for the packaging industry, its
+					groundbreaking design and ease of use makes it the perfect choice for
+					your next packaging mission. <em>The Box</em> comes with all the
+					essential needs of a proper packaging basin. Features, such as, but
+					not limited to:
+				</p>
+				<ul>
+					<li>Configurable Colors and Materials</li>
+					<li>Study, Yet Lightweight Design</li>
+					<li>Programmable Source Code</li>
+				</ul>
+			</section>
+			<section class="main-section" id="Prerequisites">
+				<header>
+					Prerequisites
+				</header>
+				<p>
+					Hold up now, I can sense just how eager you are to get started, I'm
+					loving your energy! But first there are a few things you need to keep
+					in mind before moving on; you will need:
+				</p>
+				<ul>
+					<li>Access to a desktop computer</li>
+					<li>Proficiency in the java programming language</li>
+					<li>American gradeschool level algebra and geometry</li>
+					<li>Something to put in the box (duh)</li>
+				</ul>
+				<p>
+					Also, a few recommened (but not manditory) items:
+				</p>
+				<ul>
+					<li>
+						Fluency in Portuguese: Technical documentation and community
+						resources are hard to come by in English. Your time would be well
+						spent on C1 or greater level Portuguese.
+					</li>
+					<li>A non-functioning bulls**t detector</li>
+				</ul>
+			</section>
+			<section class="main-section" id="Your_First_Box">
+				<header>
+					Your First Box
+				</header>
+				<p>
+					Now that we've got all of that out of the way, you're ready to start
+					working with your box. Start by connecting <em>The Box</em> to your
+					computer utilizing the supplied USB-C cable. Download and install the
+					required <a href="http://www.x.com">software</a> and continue on with
+					the next Section.
+				</p>
+			</section>
+			<section class="main-section" id="Configuring_Materials">
+				<header>
+					Configuring Materials
+				</header>
+				<p>
+					If you haven't already done so, Open the <em>The Box</em> application
+					and click on File > New Box Config. You should be greeted with a breif
+					twenty-five minute, unskippable video tutorial of the application.
+				</p>
+				<p>
+					Once the video has concluded and you have not filed for a refund
+					within that timeframe; follow the following steps to adjust your boxes
+					materials:
+				</p>
+				<ol>
+					<li>
+						In the top, left hand corner click on the spanner symbol to begin
+						configuration
+					</li>
+					<li>
+						Select the 'Configure Manually, I'm not stupid' option. A command
+						line will open where in-which we will be spending much of our time
+					</li>
+					<li>
+						Type in the following code replacing [material-type] with your
+						material of choice and [myBox] with the variable name of your box
+					</li>
+					<code>
+						java -m [myBox].setMaterialType([material-type]); <br />
+					</code>
+					<code> [myBox].type('a').reset(); <br /> </code>
+					followed by
+					<br />
+					<code> [myBox].build = true; <br /> </code>
+					<code> initialize([myBox]); <br /> </code>
+					<li>
+						To specify your desired color type
+					</li>
+					<code>
+						java -m [myBox].activeModification = true; <br />
+						[myBox].setColorAttribute([desired-color]); <br />
+						reinitilize([myBox]); <br />
+					</code>
+					where [desired-color] is replaced with your chosen color.
+				</ol>
+				<p>
+					Available materials are: 'Metal', 'Wood', 'Cardboard', 'Glass',
+					'None', 'Mesh', 'Inverted' and 'Organic'
+				</p>
+			</section>
+			<section class="main-section" id="Constructing_Your_Box">
+				<header>
+					Constructing Your Box
+				</header>
+				<p>
+					Unplug your newly initilized box from the application, remembering to
+					save before quitting. Fold the bottom carpartments in an secure them
+					with the magic fastening clips.
+				</p>
+				<p>
+					You are now ready to go!
+				</p>
+			</section>
+			<section class="main-section" id="Using_The_Box">
+				<header>
+					Using The Box
+				</header>
+				<p>
+					It's a box.. c'mon that's pretty self explanitory...
+				</p>
+			</section>
+			<section class="main-section" id="What_Now">
+				<header>
+					What Now
+				</header>
+				<p>
+					Do box things I guess??? Idk, I've spent too much time on this
+					nonsense....
+				</p>
+			</section>
+		</main>
+		<footer><h6>Eductational Project By: Nolan Freeman 2019</h6></footer>
+	</body>
+</html>

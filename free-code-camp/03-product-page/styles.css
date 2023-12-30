@@ -1,0 +1,138 @@
+html {
+    font-family: 'Quicksand', sans-serif;
+}
+body {
+    margin: 0;
+}
+#header {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    background-color: rgb(222,184,133);
+    width: 100%;
+    max-height: 5em;
+    padding: 1em;;
+}
+#nav-bar {
+    text-align: center;
+    align-self: flex-end;
+    flex-grow: 3;
+    display: flex;
+    justify-content: space-around;
+}
+.nav-link {
+    color: whitesmoke;
+}
+#header-image-div {
+    margin-left: 2em;
+    flex-grow: 2;
+}
+#header-img {
+    height: 5em;
+}
+#intro-div {
+    padding-top: 6em;
+    text-align: center;
+    width: 70%;
+    margin: auto;
+}
+#intro-img {
+    margin-top: 3em;
+    width: 50%
+}
+#tests-div {
+    display: flex;
+    flex-direction: column;
+    margin: 5em;
+}
+.tests-right {
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row-reverse;
+    align-content: center;
+}
+.tests-left {
+    display: flex;
+    justify-content: space-evenly;
+}
+.tests-img {
+    height: 10em;
+    object-fit: cover;
+    width: 10em;
+    border-radius: 50%;
+    align-self: center;
+    justify-self: center;
+}
+.tests-text {
+    text-align: center;
+    margin: 2em
+}
+@media (max-width: 768px){
+    .tests-right {
+        flex-direction: column;
+        flex-flow: col-reverse;
+        flex: none;
+    }
+    .tests-left {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .tests-text {
+        text-align: center;
+        margin: 2em 0;
+    }
+    #nav-bar {
+        flex-direction: column;
+        text-align: right;
+        margin-right: 2em;
+    }
+}
+#demo-div {
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+}
+#video {
+}
+#beta-signup-div {
+    margin-top: 5em;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.5em;
+}
+#form {
+}
+#email {
+    border: 1px solid rgb(222,184,133);
+    border-radius: 8px;
+    text-align: center;
+    width: 34%;
+    font-size: 1em;
+    margin-bottom: 1em;;
+}
+#submit {
+    width: 35%;
+    background-color: rgb(222,184,133);
+    color: whitesmoke;
+    font-size: 1em;
+    border-radius: 8px;
+    margin-bottom: 3em;
+}
+main {
+    background-color: bisque;
+}
+h6 {
+    margin: 0;
+    text-align: center;
+    background-color: bisque;
+}
+#fda-div {
+    display: flex;
+    justify-content: center;
+}
+#fda {
+    width: 50%;
+    filter: sepia(.95);
+    margin: 7em 0;
+}
