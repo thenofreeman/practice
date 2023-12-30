@@ -1,17 +1,17 @@
 #+title: Code Practice
 
-This repository consists of single-file programs written in various languages that emphasize some interesting coding task or challenge.
+This repository consists of question-answers and single-file programs written in various languages that emphasize some interesting coding task or educational challenge.
 
-Programs were written over a wide range of dates, for a wide variety of purposes (generally, for either learning, practice or demonstration for others) covering a wider range of personal skill-level in each respective language/tool.
+Solutions were written over a wide range of dates, for a wide variety of purposes (generally, for either learning, practice or demonstration for others) covering a wider range of personal skill-level in each respective language/tool.
 
-Files are marked with a list of languages they are implemented in, following their respective links.
+Program files are marked with a list of languages they are implemented in, following their respective links. For non-programming solutions, they are marked by topic.
 
 * Content :toc:
 - [[#algorithms][Algorithms]]
   - [[#computations][Computations]]
   - [[#searching][Searching]]
   - [[#sorting][Sorting]]
-- [[#challenges][Challenges]]
+- [[#coding-challenges][Coding Challenges]]
   - [[#leet-code][Leet Code]]
   - [[#project-euler][Project Euler]]
   - [[#rosetta-code][Rosetta Code]]
@@ -30,7 +30,7 @@ Files are marked with a list of languages they are implemented in, following the
 ** Sorting
 - [[./algorithms/selection-sort.org]] (C++)
 - [[./algorithms/bubble-sort.org]] (C++)
-* Challenges
+* Coding Challenges
 ** Leet Code
 - [[./leet-code/0001-two-sum.org]] (C++)
 - [[./leet-code/0002-add-two-numbers.org]] (C++)
