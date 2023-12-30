@@ -1,4 +1,4 @@
-#+title: 0 7 Review Questions
+#+title: 0.7 Review Questions
 
 * Q: What does the notation $f : A \rightarrow B$ mean?
 * Q: What are the criteria for $f$ to be an invertible function?
