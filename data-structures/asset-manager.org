@@ -1,0 +1,65 @@
+#+title: Asset Manager
+
+* Info
+* C++ (SFML)
+
+*Original C++ code heavily influenced by the book "SFML Game Development" from Packt Publishing*
+
+** AssetManager.h
+
+#+begin_src C++
+#pragma once
+
+#include <map>
+
+// #include <SFML/Graphics.hpp>
+#include "Texture.h"
+
+class AssetManager
+{
+    public:
+        AssetManager();
+
+        static viso::Texture& getTexture(const std::string& filename);
+
+    private:
+        std::map<std::string, viso::Texture> textures;
+
+        static AssetManager* Instance;
+};
+#+end_src
+
+** AssetManager.cpp
+
+#+begin_src C++
+#include "AssetManager.h"
+
+#include <assert.h>
+
+AssetManager* AssetManager::Instance = nullptr;
+
+AssetManager::AssetManager()
+{
+    assert(Instance == nullptr);
+    Instance = this;
+}
+
+viso::Texture& AssetManager::getTexture(const std::string& filename)
+{
+    auto& textureMap = Instance->textures;
+
+    auto pairFound = textureMap.find(filename);
+
+    if (pairFound != textureMap.end())
+    {
+        return pairFound->second;
+    }
+    else
+    {
+        auto& texture = textureMap[filename];
+        texture.loadFromFile(filename);
+
+        return texture;
+    }
+}
+#+end_src
