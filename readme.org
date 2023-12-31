@@ -20,6 +20,7 @@ Program files are marked with a list of languages they are implemented in, follo
   - [[#coding-the-matrix][Coding the Matrix]]
 - [[#courses][Courses]]
   - [[#programming-fundamentals-ii-acc-cosc-1337][Programming Fundamentals II (ACC-COSC-1337)]]
+  - [[#programming-fundamentals-iii-acc-cosc-2436][Programming Fundamentals III (ACC-COSC-2436)]]
   - [[#computer-architecture-and-machine-language-acc-cosc-2325][Computer Architecture and Machine Language (ACC-COSC-2325)]]
   - [[#responsive-web-design-freecodecamp][Responsive Web Design (freeCodeCamp)]]
 
@@ -74,6 +75,11 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[./acc-cosc-1337/lab-12a.org]] (C++)
 - [[./acc-cosc-1337/lab-12b.org]] (C++)
 - [[./acc-cosc-1337/lab-13.org]] (C++)
+** Programming Fundamentals III (ACC-COSC-2436)
+- [[./acc-cosc-2436/lab-1]] (C++)
+- [[./acc-cosc-2436/lab-2]] (C++)
+- [[./acc-cosc-2436/lab-3]] (C++)
+- [[./acc-cosc-2436/lab-4]] (C++)
 ** Computer Architecture and Machine Language (ACC-COSC-2325)
 - [[./acc-cosc-2325/lab-1-fade-without-delay.org]] (C++)
 - [[./acc-cosc-2325/lab-2-toggle-button.org]] (C++)

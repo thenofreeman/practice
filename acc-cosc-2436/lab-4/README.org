@@ -1,0 +1,59 @@
+#+TITLE: Lab 4 - Binary Trees
+
+Due: 05/13/21
+
+* Instructions
+
+You will create a class for EmployeeInfo that contains:
+
+Employee ID Number – int
+Employee Name – string
+
+Implement a binary tree whose nodes hold an instance of your EmployeeInfo class.  The nodes should be sorted on the Employee ID number. You will have a binary tree class header and implementation file.
+
+You can write your main to use the following information to test your tree:
+
+| Employee ID Number | Employee Name        |
+|--------------------+----------------------|
+|               6702 | James B W Bevis      |
+|               1255 | Romney Wordsworth    |
+|               1071 | Revis Jacara         |
+|               2390 | Clegg Forbes         |
+|               1558 | Kalin Tros           |
+|               7406 | Archibald Beechcroft |
+|               7562 | Penthor Mul          |
+|               3004 | Bartlet Finchley     |
+|               4922 | Latham Bine          |
+|               8483 | Jeff Myrtlebank      |
+
+Your program should read an employee ID and display a message telling the user whether it was found in the tree or not. Your main will have one binary tree object and all of the operations on the binary tree will be class methods.
+
+* Extra Credit (added to any lab grades below 100 to raise the grade up to 100):
+
+- Add function to display the tree – 10 points
+- Allow user to add a new employee - 10 points
+- Allow user to remove an employee – 15 points
+
+* Submission
+
+All of program source and header files compressed into a zip file.
+
+You do not have to make it a “project”, but have your header and implementation files separate. Name your zip file “lab4_Firstname_Lastname”. You decide what to name the other files.
+
+* Lab Grade Points
+
+- Comments; Including:
+  - Program description (comment block at top of program)
+  - Function descriptions for every function other than main() (see function heading below)
+  - Comments at major algorithm steps (at a minimum)
+- Followed directions
+- Correct output
+- Structured program design
+- Meaningful identifier names
+
+* The “NEVER” list of rules:
+
+- You will NEVER use break, exit, return, pass, continue or anything to leave a loop (or iteration), function, or other construct prematurely, unless it is part of the structure as in a case statement.
+- You will NEVER have a function call itself, unless it is intentional recursion.
+- You will NEVER use global variables.  However, you may use global constants if it is appropriate and they are used properly.
+- You will have only one return statement in a function. (Exception – Multiple return statements may be necessary in a recursive function.)

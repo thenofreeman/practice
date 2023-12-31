@@ -1,0 +1,56 @@
+#+TITLE: Readme
+
+You will use the array bag code that we reviewed in the text book. This code is provided with this assignment. In this code I have added one new method to the class for you to use as a guide. You should remove all traces of the “doSomething” method in all the files.
+
+You will write 3 new methods in the ArrayBag class:
+1. bubbleSort - a method to sort the array in ascending order using the bubble sort
+2. binarySearchIterative – a repetitive version of the binary search
+3. binarySearchRecursive - a recursive version of the binary search (You should use a helper or middle-man method that calls the recursive method so the client code does not have to provide the extra parameters. Client calls to both of the methods should be identical other than the method name.)
+
+Load your bag with some initial values, but do not fill it.
+
+Your client code should give the user the option to:
+1. display the contents of the bag using the class method “toVector”
+2. add values to the bag
+3. remove values from the bag
+4. sort the bag
+5. search for a value using their choice of either the iterative search or the recursive search - both need to be tested
+
+Allow the user to keep doing these things until they are done.
+
+Do not automatically sort the bag if the user chooses to search. Your program should give the user a message telling them they must first sort the bag before they can search.
+
+You decide what the user interface will be.  Make it clear and easy to use.  It can be very basic; nothing fancy. A menu driven program works well.
+
+Each value in your array should be unique - no value will appear in the array multiple times.
+
+Your array elements can be any data type – use a template class put in place in the code provided. You can write your client code to process a bag holding any data type you want.
+
+Write your client code in a modular, structured fashion. Make sure you perform input validation where appropriate. This program should be bullet-proof and well documented. I am expecting code from a programmer who is in their third semester of writing software.
+
+You will submit the following:
+- All of program source and header files compressed into a zip file (.zip).
+- Name your zip file “lab1_Firstname_Lastname”.
+- You decide what to name the other files.
+
+Labs will be graded on the following:
+
+- Comments
+  + Program description (comment block at top of program)
+  + Function descriptions for every function other than main() (see function heading below)
+  + Comments at major algorithm steps (at a minimum)
+  + Followed directions
+  + Correct output
+  + Structured program design
+  + Meaningful identifier names
+
+Function heading should look similar to this:
+
+/******************************************************************************/
+/* Function:   functionName
+/* Inputs:       parameters passed and what they represent
+/* Outputs:    value(s) returned via return statemen or
+/*                     on the parameter list
+/* Purpose:    This function blah blah blah….. describing what
+/*                     the function does
+/******************************************************************************/

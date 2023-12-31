@@ -1,0 +1,52 @@
+#+TITLE: Lab 2 - Stacks and Linked Lists
+
+You will write a program to keep up with bids at an auction.
+- You will have a class “Node” to store the bid amount.
+- You will have a class “LinkedStack” to implement the stack as a linked list.
+- Put your class definition in a header file and the implementation of the methods in a .cpp file.
+
+You can find all of this code in the Chapter 4, 6, 7 source code file available in Blackboard.
+
+I attached an input file to use as an example - auctions.txt
+
+#+begin_src text :tangle ./auctions.txt
+Valuable Ancient Item
+50
+24
+59
+62
+68
+99
+87
+53
+76
+12
+98
+81
+66
+34
+#+end_src
+
+Your program will ask the user for a file name, open a file containing a string (the item being auctioned) followed by a series of integer bid amounts. You do not know how many bids there are so you must read until you reach the end of the file. Make sure you check to see if the file opened properly before you try to process it.
+
+Read each bid from the file. If a bid is larger than the last one, you will put it on the stack. Once all bids have been processed your program will display the item and the winning bid. There is no need for a user interface that does more than ask for the file name, displaying an appropriate message if the file does not exist, and displaying the item with winning bid.
+
+You will submit the following:
+- All of program source and header files, including the book source code files, compressed into a zip file.  Name your zip file “lab2_Firstname_Lastname”. You decide what to name the other files.
+
+Labs will be graded on the following:
+- Comments
+- Including:
+  + Program description (comment block at top of program)
+  + Function descriptions for every function other than main() (see function heading below)
+  + Comments at major algorithm steps (at a minimum)
+- Followed directions
+- Correct output
+- Structured program design
+- Meaningful identifier names
+
+NOTE – The “NEVER” list of rules:
+- You will NEVER use break, exit, return, pass, continue or anything to leave a loop (or iteration), function, or other construct prematurely, unless it is part of the structure as in a case statement.
+- You will NEVER have a function call itself, unless it is intentional recursion.
+- You will NEVER use global variables.  However, you may use global constants if it is appropriate and they are used properly.
+- You will have only one return statement in a function. (Exception – Multiple return statements may be necessary in a recursive function.)
