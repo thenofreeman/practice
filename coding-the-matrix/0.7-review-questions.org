@@ -1,8 +1,0 @@
-#+title: 0.7 Review Questions
-
-* Q: What does the notation $f : A \rightarrow B$ mean?
-* Q: What are the criteria for $f$ to be an invertible function?
-* Q: What is associativity of functional composition?
-* Q: What are the criteria for a function to be a probabiity function?
-* Q: What is the Fundamental Principle of Probability Theory?
-* Q: If the input to an invertible function is chosen randomly accoriding to the uniform distrubution, what is the distrubution of the output?
