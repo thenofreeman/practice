@@ -1,10 +1,10 @@
 #+title: Practice
 
-This repository consists of question-answers and simple programs written in various languages that emphasize some interesting coding task or educational challenge.
+This repository consists of simple programs written in various languages (often single file) that emphasize some interesting coding task or educational challenge.
 
 Solutions were written over a wide range of dates, for a wide variety of purposes (generally, for either learning, practice or demonstration for others) covering a wider range of personal skill-level in each respective language/tool.
 
-Program files are marked with a list of languages they are implemented in, following their respective links. For non-programming solutions, they are marked by topic.
+Program files are marked with a list of languages they are implemented in, following their respective links.
 
 * Content :toc:
 - [[#algorithms][Algorithms]]
@@ -62,10 +62,7 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[./random/0000-number-to-words.org]] (C++)
 * Books
 ** Coding the Matrix
-- [[./coding-the-matrix/0.5-lab-introduction-to-python.org]] (Python)
-- [[./coding-the-matrix/0.6-lab-python-modules-and-control-strucutres.org]] (Python)
-- [[./coding-the-matrix/0.7-review-questions.org]] (Linear Algebra)
-- [[./coding-the-matrix/0.8-problems.org]] (Python, Linear Algebra, Probability)
+- [[./coding-the-matrix/chapter-0.org]] (Python)
 * Courses
 ** Programming Fundamentals II (ACC-COSC-1337)
 - [[./acc-cosc-1337/lab-2a.org]] (C++)
