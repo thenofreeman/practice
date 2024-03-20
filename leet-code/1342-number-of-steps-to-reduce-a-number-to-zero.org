@@ -1,4 +1,4 @@
-#+title: Number Of Steps To Reduce A Number To Zero
+#+title: 1342. Number Of Steps To Reduce A Number To Zero
 
 https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/
 
