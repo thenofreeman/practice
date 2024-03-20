@@ -37,7 +37,7 @@ Output: [4,3,2,2]
 
 Example 3:
 
-#+BEGIN_SRC C++
+#+BEGIN_SRC
 Input: digits = [9]
 Output: [1,0]
 #+END_SRC
