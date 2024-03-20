@@ -1,0 +1,76 @@
+#+title: 202. Happy Number
+
+https://leetcode.com/problems/happy-number/
+
+* Content :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
+Write an algorithm to determine if a number n is happy.
+
+A happy number is a number defined by the following process:
+- Starting with any positive integer, replace the number by the sum of the squares of its digits.
+- Repeat the process until the number equals 1 (where it will stay), or it loops endlessly in a cycle which does not include 1.
+- Those numbers for which this process ends in 1 are happy.
+- Return true if n is a happy number, and false if not.
+
+Example 1:
+
+#+BEGIN_SRC
+Input: n = 19
+Output: true
+#+END_SRC
+
+/Explanation:/
+- 12 + 92 = 82
+- 82 + 22 = 68
+- 62 + 82 = 100
+- 12 + 02 + 02 = 1
+
+Example 2:
+
+#+BEGIN_SRC
+Input: n = 2
+Output: false
+#+END_SRC
+ 
+Constraints:
+- 1 <= n <= 231 - 1
+
+* C++
+
+#+begin_src C++
+bool isHappy(int n) 
+{
+    bool found = false;
+    bool repeated = false;
+    std::map<int, int> previous;
+    int num = squared(n);
+
+    while (!found && !repeated)
+    {
+        if (num == 1) found = true;
+
+        std::pair<std::map<int,int>::iterator, bool> added;
+        added = previous.insert(std::pair<int, int>(num, num));
+
+        if (added.second) 
+            num = squared(num);
+        else 
+            repeated = true;
+    }
+    
+    return found;
+}
+
+int squared(int rhs)
+{
+    if (rhs / 10 == 0) return rhs*rhs;
+
+    int lhs = (rhs % 10);
+    
+    return squared(rhs / 10) + lhs*lhs
+}
+#+end_src
