@@ -1,0 +1,41 @@
+#+TITLE: Greetings
+
+[LINK HERE TO PDF OF PROBLEM]
+
+* Contents :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
+Assuming many teenagers of the world have switched to the new hot social app called BAPC (Bidirectional and Private Communication) in 2023. 
+This app has some stricter social rules than previous social apps such as snapchat and Instagram.
+For example, if someone greets you with "he...ey", you have to respond with "hee...eey" as well, but using twice as many e's!
+
+Given a string of the form he...ey of length at most 1000, print the greeting you will respond with, containing twice as many e's.
+
+/Input Specification:/
+- The input consists of one line containing a single string s as specified, of length at least 3 and at most 1000.
+
+/Output Specification:/
+- hey : heey
+- heeeeey : heeeeeeeeeey
+
+* C++
+
+#+begin_src C++ :main no
+#include <iostream>
+#include <string>
+
+int main() 
+{
+    std::string line;
+    std::getline(std::cin, line);
+
+    int numEs = line.find('y')-1;
+
+    std::cout << 'h' << std::string('e', numEs) << 'y' << std::endl;
+
+    return 0;
+}
+#+end_src
