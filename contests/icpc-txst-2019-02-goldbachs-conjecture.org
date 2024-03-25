@@ -1,0 +1,133 @@
+#+TITLE: Problem 2: Goldbach's Conjecture
+
+[LINK HERE TO PDF OF PROBLEM]
+
+* Contents :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
+In 1742, Christian Goldbach, a German amateur mathematician, sent a letter to Leonhard Euler in which he made the following conjecture: Every even number greater than 4 can be written as the sum of two odd prime numbers. For example:
+8=3+5. Both 3 and 5 are odd prime numbers. 20=3+17=7+13; 42=5+37=11+31=13+29=19+23.
+
+Your task is to verify Goldbach's conjecture for a set of even numbers that are less than a million.
+
+/Input Specification:/
+- The input file will contain one or more even integers. 
+Each even integer is greater than 6 and less than 1,000,000. A 0 marks the end of the input.
+
+/Output Specification:/
+- For each even integer, print one line of the form n = a + b, where a and b are odd primes. 
+- Numbers and operators should be separated by exactly one blank space like in the sample output below. 
+- If there is more than one pair of odd primes adding up to n, choose the pair where the difference b - a is maximized. 
+- If there is no such pair, print a line saying "Goldbach's conjecture is wrong."
+
+/Sample Input and Output:/
+#+BEGIN_SRC 
+8
+20
+42
+0
+#+END_SRC
+
+#+BEGIN_SRC 
+8 = 3 + 5
+20 = 3 + 17
+42 = 5 + 37
+#+END_SRC
+
+* C++
+
+#+BEGIN_SRC C++
+#include <iostream>
+#include <vector>
+#include <string>
+#include <sstream>
+#include <cmath>
+
+struct Pair 
+{
+    int a;
+    int b;
+};
+
+std::string verifyGoldbach(int num);
+bool isPrime(int num);
+
+int main()
+{
+    int num = 0;
+    std::cin >> num;
+
+    while (num != 0)
+    {
+        std::cout << verifyGoldbach(num) << std::endl;
+        std::cin >> num;
+    }
+
+    return 0;
+}
+
+std::string verifyGoldbach(int num)
+{
+    int k = num / 2;
+
+    std::vector<Pair> pairs;
+
+    for (int n = 0; n <= k/2-1; ++n)
+    {
+        int m = k - 1 - n;
+
+        int b = (2*n + 1);
+        int c = (2*m + 1);
+
+        if (isPrime(b) && isPrime(c))
+            pairs.push_back({b, c});
+    }
+    
+    int largestPairDifference = 0;
+    int largestPairDifferenceIndex = -1;
+    for (int i = 0; i < pairs.size(); ++i)
+    {
+        Pair pair = pairs[i];
+        int difference = abs(pair.b - pair.a); 
+
+        if (difference > largestPairDifference)
+        {
+            largestPairDifference = difference;
+            largestPairDifferenceIndex = i;
+        }
+    }
+
+    if (largestPairDifferenceIndex != -1)
+    {
+        Pair pair = pairs[largestPairDifferenceIndex];
+        std::stringstream s;
+        s << num << " = " << pair.a << " + " << pair.b;
+
+        return s.str();
+    }
+    else
+    {
+        return "Goldbach's conjecture is wrong.";
+    }
+}
+
+bool isPrime(int num)
+{
+    bool isPrime = (num != 1);
+
+    int i = 2;
+    while (isPrime && i <= num/2)
+    {
+        if (num % i == 0)
+        {
+            isPrime = false;
+        }
+        i++;
+    }
+
+    return isPrime;
+}
+#+END_SRC
