@@ -1,0 +1,67 @@
+#+TITLE: Problem 4: Box of Bricks
+
+[LINK HERE TO PDF OF PROBLEM]
+
+* Contents :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
+
+* C++
+
+#+BEGIN_SRC C++
+#include <iostream>
+#include <iomanip>
+#include <vector>
+#include <string>
+
+int main()
+{
+    int numStacks = 0;
+    std::cin >> numStacks;
+
+    std::vector<int> movesPerStack;
+
+    while (numStacks != 0)
+    {
+        int* stacks = new int[numStacks];
+
+        int stackHeight = 0;
+        int totalHeight = 0;
+
+        for (int i = 0; i < numStacks; ++i)
+        {
+            std::cin >> stacks[i];
+            totalHeight += stacks[i];
+        }
+
+        int targetHeight = totalHeight / numStacks;
+        
+        int moves = 0;
+        for (int i = 0; i < numStacks; ++i)
+        {
+            if (stacks[i] > targetHeight)
+            {
+                moves += stacks[i] - targetHeight;
+            }
+        }
+
+        delete[] stacks;
+
+        movesPerStack.push_back(moves);
+
+        std::cin >> numStacks;
+    }
+
+    int stackNumber = 1;
+    for (int move : movesPerStack)
+    {
+        std::cout << "Set #" << stackNumber++ << '\n'
+                  << "The minimum number of moves is " << move << '\n' << std::endl;
+    }
+
+    return 0;
+}
+#+END_SRC
