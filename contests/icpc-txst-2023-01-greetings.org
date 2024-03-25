@@ -32,9 +32,9 @@ int main()
     std::string line;
     std::getline(std::cin, line);
 
-    int numEs = line.find('y')-1;
+    int numEs = (line.length()-2)*2;
 
-    std::cout << 'h' << std::string('e', numEs) << 'y' << std::endl;
+    std::cout << 'h' << std::string(numEs, 'e') << 'y' << std::endl;
 
     return 0;
 }
