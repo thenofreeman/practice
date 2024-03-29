@@ -1,0 +1,78 @@
+#+TITLE: Problem 1: Perfect Numbers
+
+[LINK HERE TO PDF OF PROBLEM]
+
+* Contents :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
+UNFINISHED
+
+* C++
+
+#+begin_src C++ :main no
+#include <iostream>
+#include <vector>
+#include <sstream>
+
+bool isInteger(std::string s);
+int recurseSequence(int total, int depth);
+int depthOperation(int a, int b, int depth);
+
+std::stringstream stream;
+
+int main()
+{
+    int depth = 0;
+
+    std::string s;
+    std::getline(std::cin, s);
+
+    stream << s;
+
+    char c = stream.peek();
+    std::cout << recurseSequence((c == '('), depth) << std::endl;
+
+    return 0;
+}
+
+int recurseSequence(int total, int depth)
+{
+    std::string token;
+    stream >> token;
+
+    std::cout << token << std::endl;
+
+    if (token == "(")
+        total = depthOperation(total, recurseSequence(total, ++depth), depth);
+    else if (isInteger(token))
+        total = depthOperation(total, std::stoi(token), depth);
+    else // if (std::cin.fail() || token == ")" || token == "\n")
+        return total;
+
+    return recurseSequence(total, depth);
+}
+
+bool isInteger(std::string s)
+{
+    bool isInteger = true;
+
+    try 
+    {
+        std::stoi(s);
+    } 
+    catch (...)
+    {
+        isInteger = false; 
+    }
+
+    return isInteger;
+}
+
+int depthOperation(int a, int b, int depth)
+{
+    return (depth % 2 == 0) ? (a*b) : (a+b);
+}
+#+end_src
