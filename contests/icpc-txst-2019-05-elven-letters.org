@@ -1,0 +1,193 @@
+#+TITLE: Problem 4: Box of Bricks
+
+[LINK HERE TO PDF OF PROBLEM]
+
+* Contents :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
+[description needed]
+
+/Sample Input:/
+
+#+BEGIN_SRC 
+2
+4
+2 1 4 3
+3
+1 2 3
+6
+6 5 4 3 2 1
+1
+1
+#+END_SRC
+
+* C++
+
+#+name: bst.h
+#+BEGIN_SRC C++
+#pragma once
+
+#include "bst.h"
+
+#include <iostream>
+#include <string>
+
+using std::string;
+
+struct Node
+{
+    int value;
+    Node* east;
+    Node* west;
+
+};
+
+class BST
+{
+    public:
+        BST();
+
+        Node* addNode(int);
+        string getPath(int) const;
+        void displayTree() const;
+
+    private:
+        Node* addNode_helper(Node*, int);
+        string getPath_helper(Node*, int) const;
+        void displayTree_helper(Node*) const;
+
+    public:
+
+        Node* root;
+    private:
+
+};
+#+END_SRC
+
+#+name: bst.cpp
+#+BEGIN_SRC C++
+#include "bst.h"
+
+BST::BST()
+    : root{nullptr}
+{ }
+
+Node* BST::addNode(int value)
+{
+    root = addNode_helper(root, value);
+    return root;
+}
+
+Node* BST::addNode_helper(Node* curr, int value)
+{
+    if (curr == nullptr)
+    {
+        curr = new Node;
+        curr->value = value;
+        curr->east = nullptr;
+        curr->west = nullptr;
+        
+    }
+    else // if (curr != nullptr)
+    {
+        if (value < curr->value)
+            curr->east = addNode_helper(curr->east, value);
+        else // if (value > leaf->value)
+            curr->west = addNode_helper(curr->west, value);
+    }
+
+    return curr;
+}
+
+std::string BST::getPath(int value) const
+{
+    return getPath_helper(root, value);
+}
+
+std::string BST::getPath_helper(Node* curr, int value) const
+{
+    if (curr->east == nullptr && curr->west == nullptr)
+        return "";
+
+    if (value < curr->value)
+    {
+        return "E" + getPath_helper(curr->east, value);
+    }
+    else if (value > curr->value)
+    {
+        return "W" + getPath_helper(curr->west, value);
+    }
+    else 
+    {
+        return "";
+    }
+}
+
+void BST::displayTree() const
+{
+    displayTree_helper(root);
+}
+
+void BST::displayTree_helper(Node * curr) const
+{
+    if (curr)
+    {
+        std::cout << curr->value << std::endl;
+
+        displayTree_helper(curr->east);
+        std::cout << std::endl;
+        displayTree_helper(curr->west);
+    }
+}
+#+END_SRC
+
+#+name: main.cpp
+#+BEGIN_SRC C++
+#include <iostream>
+#include <string>
+#include <sstream>
+
+#include "bst.h"
+
+int main()
+{
+    int numCases = 0;
+    std::cin >> numCases; 
+
+    std::stringstream output;
+
+    for (int i = 0; i < numCases; i++)
+    {
+        BST tree;
+
+        int numRooms = 0;
+        std::cin >> numRooms;
+
+        for (int j = 0; j < numRooms; j++)
+        {
+            int address = -1;
+            std::cin >> address;
+            tree.addNode(address);
+        }
+
+        int numLetters = 0;
+        std::cin >> numLetters;
+
+        for (int j = 0; j < numLetters; j++)
+        {
+            int address = -1;
+            std::cin >> address;
+
+            output << tree.getPath(address) << '\n';
+        }
+
+    }
+
+    std::cout << output.str();
+
+    return 0;
+}
+#+END_SRC
