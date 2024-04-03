@@ -65,15 +65,17 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[./random/0000-number-to-words.org][0000 - Number to Words]] (C++)
 * Programming Contests
 ** ICPC Texas State
-- [[./contests/icpc-txst-2019-01-perfect-numbers.org][2019-01 - Perfect Numbers]] (C++)
-- [[./contests/icpc-txst-2019-02-goldbachs-conjecture.org][2019-02 - Goldbachs Conjecture]] (C++)
-- [[./contests/icpc-txst-2019-03-time-zones.org][2019-03 - Time Zones]] (C++)
-- [[./contests/icpc-txst-2019-04-box-of-bricks.org][2019-04 - Box of Bricks]] (C++)
-- [[./contests/icpc-txst-2019-05-elven-letters.org][2019-05 - Elven Letters]] (C++)
-- [[./contests/icpc-txst-2019-06-birthday-gift.org][2019-06 - Birthday Gift]] (C++)
-- [[./contests/icpc-txst-2023-01-greetings.org][2023-01 - Greetings]] (C++)
-- [[./contests/icpc-txst-2023-02-bracket-sequence.org][2023-02 - Bracket Sequence]] (C++)
-- [[./contests/icpc-txst-2023-03-floor-plan.org][2023-03 - Floor Plan]] (C++)
+- 2019
+  - [[./contests/icpc-txst-2019-01-perfect-numbers.org][01 - Perfect Numbers]] (C++)
+  - [[./contests/icpc-txst-2019-02-goldbachs-conjecture.org][02 - Goldbachs Conjecture]] (C++)
+  - [[./contests/icpc-txst-2019-03-time-zones.org][03 - Time Zones]] (C++)
+  - [[./contests/icpc-txst-2019-04-box-of-bricks.org][04 - Box of Bricks]] (C++)
+  - [[./contests/icpc-txst-2019-05-elven-letters.org][05 - Elven Letters]] (C++)
+  - [[./contests/icpc-txst-2019-06-birthday-gift.org][06 - Birthday Gift]] (C++)
+- 2023
+  - [[./contests/icpc-txst-2023-01-greetings.org][01 - Greetings]] (C++)
+  - [[./contests/icpc-txst-2023-02-bracket-sequence.org][02 - Bracket Sequence]] (C++)
+  - [[./contests/icpc-txst-2023-03-floor-plan.org][03 - Floor Plan]] (C++)
 * Books
 ** Coding the Matrix
 - [[./coding-the-matrix/chapter-0.org][Chapter 0]] (Python)
