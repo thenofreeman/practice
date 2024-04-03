@@ -1,4 +1,4 @@
-#+TITLE: Problem 4: Box of Bricks
+#+TITLE: Problem 6: Birthday Gift
 
 [LINK HERE TO PDF OF PROBLEM]
 
