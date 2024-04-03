@@ -18,6 +18,8 @@ Program files are marked with a list of languages they are implemented in, follo
   - [[#project-euler][Project Euler]]
   - [[#rosetta-code][Rosetta Code]]
   - [[#random][Random]]
+- [[#programming-contests][Programming Contests]]
+  - [[#icpc-texas-state][ICPC Texas State]]
 - [[#books][Books]]
   - [[#coding-the-matrix][Coding the Matrix]]
 - [[#courses][Courses]]
@@ -46,6 +48,9 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[./leet-code/0009-palindrome-number.org][0009 - Palindrome Number]] (C++)
 - [[./leet-code/0013-roman-to-integer.org][0013 - Roman to Integer]] (C++)
 - [[./leet-code/0020-valid-parentheses.org][0020 - Valid Parentheses]] (C++)
+- [[./leet-code/0066-plus-one.org][0066 - Plus One]] (C++)
+- [[./leet-code/0088-merge-sorted-array.org][0088 - Merge Sorted Array]] (C++)
+- [[./leet-code/0202-happy-number.org][0202 - Happy Number]] (C++)
 - [[./leet-code/0383-ransom-note.org][0383 - Ransom Note]] (C++)
 - [[./leet-code/0412-fizz-buzz.org][0412 - Fizz Buzz]] (C++)
 - [[./leet-code/0876-middle-of-the-linked-list.org][0876 - Middle of the Linked List]] (C++)
@@ -60,6 +65,16 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[./rosetta-code/towers-of-hanoi.org][Towers of Hanoi]] (C++)
 ** Random
 - [[./random/0000-number-to-words.org][0000 - Number to Words]] (C++)
+* Programming Contests
+** ICPC Texas State
+- [[./contests/icpc-txst-2019-01-perfect-numbers.org][2019-01 - Perfect Numbers]] (C++)
+- [[./contests/icpc-txst-2019-02-goldbachs-conjecture.org][2019-02 - Goldbachs Conjecture]] (C++)
+- [[./contests/icpc-txst-2019-03-time-zones.org][2019-03 - Time Zones]] (C++)
+- [[./contests/icpc-txst-2019-04-box-of-bricks.org][2019-04 - Box of Bricks]] (C++)
+- [[./contests/icpc-txst-2019-05-elven-letters.org][2019-05 - Elven Letters]] (C++)
+- [[./contests/icpc-txst-2019-06-birthday-gift.org][2019-06 - Birthday Gift]] (C++)
+- [[./contests/icpc-txst-2023-01-greetings.org][2023-01 - Greetings]] (C++)
+- [[./contests/icpc-txst-2023-02-bracket-sequence.org][2023-02 - Bracket Sequence]] (C++)
 * Books
 ** Coding the Matrix
 - [[./coding-the-matrix/chapter-0.org][Chapter 0]] (Python)
