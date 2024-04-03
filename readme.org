@@ -2,8 +2,6 @@
 
 This repository consists of simple programs written in various languages (often single file) that emphasize some interesting coding task or educational challenge.
 
-Solutions were written over a wide range of dates, for a wide variety of purposes (generally, for either learning, practice or demonstration for others) covering a wider range of personal skill-level in each respective language/tool.
-
 Program files are marked with a list of languages they are implemented in, following their respective links.
 
 * Content :toc:
