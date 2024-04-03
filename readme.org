@@ -12,7 +12,7 @@ Program files are marked with a list of languages they are implemented in, follo
   - [[#searching][Searching]]
   - [[#sorting][Sorting]]
 - [[#data-structures][Data Structures]]
-  - [[#abstractions][Abstractions]]
+- [[#design-patterns][Design Patterns]]
 - [[#coding-challenges][Coding Challenges]]
   - [[#leet-code][Leet Code]]
   - [[#project-euler][Project Euler]]
@@ -37,7 +37,7 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[./algorithms/selection-sort.org][Selection Sort]] (C++)
 - [[./algorithms/bubble-sort.org][Bubble Sort]] (C++)
 * Data Structures
-** Abstractions
+* Design Patterns
 - [[./data-structures/animator.org][Animator]] (C++)
 - [[./data-structures/asset-manager.org][Asset Manager]] (C++)
 * Coding Challenges
