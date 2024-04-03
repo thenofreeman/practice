@@ -73,6 +73,7 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[./contests/icpc-txst-2019-06-birthday-gift.org][2019-06 - Birthday Gift]] (C++)
 - [[./contests/icpc-txst-2023-01-greetings.org][2023-01 - Greetings]] (C++)
 - [[./contests/icpc-txst-2023-02-bracket-sequence.org][2023-02 - Bracket Sequence]] (C++)
+- [[./contests/icpc-txst-2023-03-floor-plan.org][2023-03 - Floor Plan]] (C++)
 * Books
 ** Coding the Matrix
 - [[./coding-the-matrix/chapter-0.org][Chapter 0]] (Python)
