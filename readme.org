@@ -22,7 +22,7 @@ Program files are marked with a list of languages they are implemented in, follo
   - [[#icpc-texas-state][ICPC Texas State]]
 - [[#books][Books]]
   - [[#coding-the-matrix][Coding the Matrix]]
-- [[#courses][Courses]]
+- [[#coursework][Coursework]]
   - [[#programming-fundamentals-ii-acc-cosc-1337][Programming Fundamentals II (ACC-COSC-1337)]]
   - [[#programming-fundamentals-iii-acc-cosc-2436][Programming Fundamentals III (ACC-COSC-2436)]]
   - [[#computer-architecture-and-machine-language-acc-cosc-2325][Computer Architecture and Machine Language (ACC-COSC-2325)]]
@@ -78,7 +78,7 @@ Program files are marked with a list of languages they are implemented in, follo
 * Books
 ** Coding the Matrix
 - [[./coding-the-matrix/chapter-0.org][Chapter 0]] (Python)
-* Courses
+* Coursework
 ** Programming Fundamentals II (ACC-COSC-1337)
 - [[./acc-cosc-1337/lab-2a.org][Lab 2a]] (C++)
 - [[./acc-cosc-1337/lab-2b.org][Lab 2b]] (C++)
