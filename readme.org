@@ -29,17 +29,67 @@ Program files are marked with a list of languages they are implemented in, follo
 * Algorithms
 ** Computations
 - [[./algorithms/factorial.org][Factorial]] (C++)
+- Quick Inverse Square Root
+- Derivative
+- Integral
+- Algebraic Variable Manipulation
+- Square Root
 ** Searching
 - [[./algorithms/binary-search.org][Binary Search]] (C++)
+- Linear Search
+- Ternary Search
+- Jump Search
+- Interpolation Search
+- Exponential Search
+- Fibonacci Search
+- Hash Search
 ** Sorting
+- Insertion Sort
 - [[./algorithms/selection-sort.org][Selection Sort]] (C++)
 - [[./algorithms/bubble-sort.org][Bubble Sort]] (C++)
+- Shell Sort
+- Merge Sort
+- Heap Sort
+- Quick Sort
+- Radix Sort
+- Counting Sort
+- Topological Sort
+- Bogo Sort
+- Bucket Sort
 * Data Structures
+- Unbalanced Binary Tree
+- Balanced Binary Tree
+- Binary Search Tree
+- Red-Black Tree
+- N-ary Tree
+- Graph
+- Directional Graph
+- Singly Linked List
+- Doubly Linked List
+- Stack
+- Queue
+- String
+- Dynamic Array
+- Parallel Array
+- Any
+- List
+- Set
+- Tuple
+- N-Tuple
+- Number
+- Complex Number
+- Imaginary Number
+- Rational Number
+- Irrational Number
 * Design Patterns
+- Command
+- Flyweight
+- Singleton
+* Utilities
 - [[./data-structures/animator.org][Animator]] (C++)
 - [[./data-structures/asset-manager.org][Asset Manager]] (C++)
 * Coding Challenges
-** Leet Code
+** Leet Code ([[https://leetcode.com][site]])
 - [[./leet-code/0001-two-sum.org][0001 - Two Sum]] (C++)
 - [[./leet-code/0002-add-two-numbers.org][0002 - Add Two Numbers]] (C++)
 - [[./leet-code/0003-longest-substring-without-repeating-characters.org][0003 - Longest Substring Without Repeating Characters]] (C++)
@@ -55,16 +105,16 @@ Program files are marked with a list of languages they are implemented in, follo
 - [[./leet-code/1342-number-of-steps-to-reduce-a-number-to-zero.org][1342 - Number of Steps to Reduce a Number to Zero]] (C++)
 - [[./leet-code/1480-running-sum-of-1d-array.org][1480 - Running Sum of 1D Array]] (C++)
 - [[./leet-code/1672-richest-customer-wealth.org][1672 - Richest Customer Wealth]] (C++)
-** Project Euler
+** Project Euler ([[https://projecteuler.net][site]])
 - [[./project-euler/0001-multiples-of-3-and-5.org][0001 - Multiples of 3 and 5]] (C++)
-** Rosetta Code
+** Rosetta Code ([[https://rosettacode.org][site]])
 - [[./rosetta-code/100-doors.org][100 Doors]] (C++)
 - [[./rosetta-code/fizzbuzz.org][FizzBuzz]] (C++, JavaScript)
 - [[./rosetta-code/towers-of-hanoi.org][Towers of Hanoi]] (C++)
 ** Random
 - [[./random/0000-number-to-words.org][0000 - Number to Words]] (C++)
 * Programming Contests
-** ICPC Texas State
+** ICPC Texas State ([[https://acmicpc.cs.txstate.edu/][site]])
 - 2019
   - [[./contests/icpc-txst-2019-01-perfect-numbers.org][01 - Perfect Numbers]] (C++)
   - [[./contests/icpc-txst-2019-02-goldbachs-conjecture.org][02 - Goldbachs Conjecture]] (C++)
@@ -76,6 +126,22 @@ Program files are marked with a list of languages they are implemented in, follo
   - [[./contests/icpc-txst-2023-01-greetings.org][01 - Greetings]] (C++)
   - [[./contests/icpc-txst-2023-02-bracket-sequence.org][02 - Bracket Sequence]] (C++)
   - [[./contests/icpc-txst-2023-03-floor-plan.org][03 - Floor Plan]] (C++)
+  - 05 - ??
+  - 06 - ??
+- 2024
+  - 01 - ??
+  - 02 - Food ??
+  - 03 - Disneyland ??
+  - 04 - Sun and Moon
+  - 05 - Training
+  - 06 - ??
+** Labatt Contest ([[https://acmicpc.cs.txstate.edu/style1/LabattContestProblems.pdf][pdf]])
+- 01 - Kayaks
+- 02 - Poker
+- 03 - Artificial Intelligence?
+- 04 - Hav Points
+- 05 - Maze Traversal
+- 06 - Roman Numeral
 * Books
 ** Coding the Matrix
 - [[./coding-the-matrix/chapter-0.org][Chapter 0]] (Python)
