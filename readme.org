@@ -1,16 +1,10 @@
 #+title: Practice
 
-This repository consists of simple programs written in various languages (often single file) that emphasize some interesting coding task or educational challenge.
+A collection of small projects and exercises to practice programming.
 
 Program files are marked with a list of languages they are implemented in, following their respective links.
 
 * Content :toc:
-- [[#algorithms][Algorithms]]
-  - [[#computations][Computations]]
-  - [[#searching][Searching]]
-  - [[#sorting][Sorting]]
-- [[#data-structures][Data Structures]]
-- [[#design-patterns][Design Patterns]]
 - [[#coding-challenges][Coding Challenges]]
   - [[#leet-code][Leet Code]]
   - [[#project-euler][Project Euler]]
@@ -25,69 +19,6 @@ Program files are marked with a list of languages they are implemented in, follo
   - [[#programming-fundamentals-iii-acc-cosc-2436][Programming Fundamentals III (ACC-COSC-2436)]]
   - [[#computer-architecture-and-machine-language-acc-cosc-2325][Computer Architecture and Machine Language (ACC-COSC-2325)]]
   - [[#responsive-web-design-freecodecamp][Responsive Web Design (freeCodeCamp)]]
-
-* Algorithms
-** Computations
-- [[./algorithms/factorial.org][Factorial]] (C++)
-- Quick Inverse Square Root
-- Derivative
-- Integral
-- Algebraic Variable Manipulation
-- Square Root
-** Searching
-- [[./algorithms/binary-search.org][Binary Search]] (C++)
-- Linear Search
-- Ternary Search
-- Jump Search
-- Interpolation Search
-- Exponential Search
-- Fibonacci Search
-- Hash Search
-** Sorting
-- Insertion Sort
-- [[./algorithms/selection-sort.org][Selection Sort]] (C++)
-- [[./algorithms/bubble-sort.org][Bubble Sort]] (C++)
-- Shell Sort
-- Merge Sort
-- Heap Sort
-- Quick Sort
-- Radix Sort
-- Counting Sort
-- Topological Sort
-- Bogo Sort
-- Bucket Sort
-* Data Structures
-- Unbalanced Binary Tree
-- Balanced Binary Tree
-- Binary Search Tree
-- Red-Black Tree
-- N-ary Tree
-- Graph
-- Directional Graph
-- Singly Linked List
-- Doubly Linked List
-- Stack
-- Queue
-- String
-- Dynamic Array
-- Parallel Array
-- Any
-- List
-- Set
-- Tuple
-- N-Tuple
-- Number
-- Complex Number
-- Imaginary Number
-- Rational Number
-- Irrational Number
-* Design Patterns
-- Command
-- Flyweight
-- Singleton
-* Utilities
-- [[./data-structures/animator.org][Animator]] (C++)
-- [[./data-structures/asset-manager.org][Asset Manager]] (C++)
 * Coding Challenges
 ** Leet Code ([[https://leetcode.com][site]])
 - [[./leet-code/0001-two-sum.org][0001 - Two Sum]] (C++)
