@@ -15,6 +15,7 @@ Demos
 - [Hello, World!](./programs/hello-world/index.md) (Ada, C++, Java, JavaScript, Python)
 
 Leet Code
+- [0001 - Two Sum](./programs/two-sum/index.md) (C++)
 
 Project Euler
 
