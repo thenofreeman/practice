@@ -8,6 +8,7 @@ Assignments
 
 Challenges
 - [100 Doors](./programs/100-doors/index.md) (C++)
+- [Towers of Hanoi](./programs/towers-of-hanoi/index.md) (C++)
 
 Demos
 - [Hello, World!](./programs/hello-world/index.md) (Ada, C++, Java, JavaScript, Python)
