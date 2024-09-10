@@ -1,0 +1,57 @@
+#+TITLE: Problem 3: Floor Plan
+
+[LINK HERE TO PDF OF PROBLEM]
+
+* Contents :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
+UNFINISHED
+
+* C++
+
+#+begin_src C++ :main no
+#include <iostream>
+#include <cmath>
+
+bool isPerfect(long long int mSquared);
+
+int main()
+{
+    long long int n;
+    std::cin >> n;
+
+    bool worked = false;
+
+    long long int k = 0;
+    long long int m = 0;
+    while (!worked && k < n)
+    {
+        if (isPerfect(n + k*k))
+        {
+            worked = true;
+            m = std::sqrt(n + k*k);
+        }
+        else
+        {
+            k++;
+        }
+    }
+
+    if (worked)
+        std::cout << m << ' ' << k;
+    else 
+        std::cout << "impossible";
+
+    return 0;
+}
+
+bool isPerfect(long long int mSquared)
+{
+    long double m = std::sqrt(mSquared);
+
+    return std::floor(m) == m;
+}
+#+end_src

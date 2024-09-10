@@ -1,0 +1,85 @@
+#+title: 66. Plus One
+
+https://leetcode.com/problems/plus-one/
+
+* Content :toc:
+- [[#info][Info]]
+- [[#c][C++]]
+
+* Info
+
+You are given a large integer represented as an integer array digits, where each digits[i] is the ith digit of the integer. The digits are ordered from most significant to least significant in left-to-right order. The large integer does not contain any leading 0's.
+
+Increment the large integer by one and return the resulting array of digits.
+
+Example 1:
+
+#+BEGIN_SRC
+Input: digits = [1,2,3]
+Output: [1,2,4]
+#+END_SRC
+
+- Explanation: The array represents the integer 123.
+- Incrementing by one gives 123 + 1 = 124.
+- Thus, the result should be [1,2,4].
+
+Example 2:
+
+#+BEGIN_SRC
+Input: digits = [4,3,2,1]
+Output: [4,3,2,2]
+#+END_SRC
+
+/Explanation:/
+- The array represents the integer 4321.
+- Incrementing by one gives 4321 + 1 = 4322.
+- Thus, the result should be [4,3,2,2].
+
+Example 3:
+
+#+BEGIN_SRC
+Input: digits = [9]
+Output: [1,0]
+#+END_SRC
+
+/Explanation:/
+- The array represents the integer 9.
+- Incrementing by one gives 9 + 1 = 10.
+- Thus, the result should be [1,0].
+ 
+
+Constraints:
+- 1 <= digits.length <= 100
+- 0 <= digits[i] <= 9
+- digits does not contain any leading 0's.
+
+* C++
+
+#+begin_src C++
+std::vector<int> plusOne(std::vector<int>& digits) 
+{
+    std::vector<int> output = digits;
+    bool placed {false};
+
+    int i = output.size() - 1;
+    while (!placed)
+    {
+        output[i] = (output[i] + 1) % 10;
+
+        if (output[i] > 0)
+        {
+            placed = true;
+        } 
+        else  if (i == 0)
+        {
+            output.insert(output.begin(), 1);
+            placed = true;
+        }
+
+        --i;
+    }
+
+    return output;
+}
+    
+#+end_src
