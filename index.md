@@ -16,6 +16,7 @@ Demos
 
 Leet Code
 - [0001 - Two Sum](./programs/two-sum/index.md) (C++)
+- [0002 - Add Two Numbers](./programs/add-two-numbers/index.md) (C++)
 
 Project Euler
 
